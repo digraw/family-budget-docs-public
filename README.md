@@ -2,7 +2,7 @@
 
 **Status:** 🔒 Private (Ready for Review)
 
-# 📖 [View Full Documentation Website](https://rawrahul.github.io/family-budget-docs-public/)
+# 📖 [View Full Documentation Website](https://digraw.github.io/family-budget-docs-public/)
 
 This repository contains the public-facing documentation for Family Budget Tracker.
 
@@ -92,7 +92,7 @@ family-budget-docs-public/
    - Source: Deploy from branch `master`
    - Folder: `/` (root)
    - Save
-6. **Live URL**: https://rawrahul.github.io/family-budget-docs-public/
+6. **Live URL**: https://digraw.github.io/family-budget-docs-public/
 
 ### For Product Hunt:
 - **Documentation Link**: Use the GitHub Pages URL
