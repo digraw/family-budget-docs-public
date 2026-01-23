@@ -1,4 +1,4 @@
-# Family Budget Tracker - Public Documentation
+# <img src="assets/images/logo.png" width="40" height="40" style="vertical-align: middle; border-radius: 8px; margin-right: 10px;"> Family Budget Tracker - Public Documentation
 
 **Status:** 🔒 Private (Ready for Review)
 
