@@ -61,8 +61,8 @@ family-budget-docs-public/
 - [x] All features described match actual app functionality
 - [x] No sensitive information or code exposed
 - [x] Pricing information accurate ($9.99 Solo, $14.99 Family)
-- [x] Support email correct (support@digraw.xyz)
-- [x] App URL correct (family-budget.digraw.xyz)
+- [x] Support email correct (support@getdigraw.com)
+- [x] App URL correct (family-budget.getdigraw.com)
 - [x] No assumptions made - all based on actual features
 
 ### Design & UX
@@ -101,8 +101,8 @@ family-budget-docs-public/
 
 ## 📧 Contact
 
-**Support:** support@digraw.xyz  
-**App:** https://family-budget.digraw.xyz  
+**Support:** support@getdigraw.com  
+**App:** https://family-budget.getdigraw.com  
 
 ---
 
