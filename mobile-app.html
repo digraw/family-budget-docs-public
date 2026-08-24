@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Android Mobile App Guide for Family Budget Tracker - Biometrics, Push Bank Ingestion, Skia Charts, and Voice Commands">
+    <title>Android Mobile App - Family Budget Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="assets/images/logo.png" alt="Logo"
+                    style="width: 32px; height: 32px; border-radius: 6px; margin-right: 10px;">
+                <h1>Family Budget Tracker</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="user-manual.html">User Manual</a></li>
+                <li><a href="mobile-app.html" class="active">Mobile App</a></li>
+                <li><a href="magic-drop-guide.html">Magic Drop & Gmail</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="https://family-budget.getdigraw.com" class="btn-primary">Try App</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="sidebar">
+            <h3>Mobile Features</h3>
+            <ul>
+                <li><a href="#download">1. Download & Install</a></li>
+                <li><a href="#biometrics">2. Biometric Security</a></li>
+                <li><a href="#push-ingestion">3. Bank Push Capture</a></li>
+                <li><a href="#skia-charts">4. Interactive Skia Charts</a></li>
+                <li><a href="#voice-mobile">5. Voice Commands</a></li>
+                <li><a href="#updates">6. In-App Updates</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>📱 Native Android Mobile App</h1>
+            <p class="lead">The native Android companion app for Family Budget Tracker puts real-time budgeting in your pocket with biometric security, instant push notification transaction ingestion, and high-performance interactive Skia charts.</p>
+
+            <div class="video-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin: 2rem 0;">
+                <img src="assets/images/mobile-dashboard.png" alt="Mobile Dashboard" class="doc-image" style="margin: 0;">
+                <img src="assets/images/mobile-transactions.png" alt="Mobile Transactions" class="doc-image" style="margin: 0;">
+                <img src="assets/images/mobile-goals.png" alt="Mobile Savings Goals" class="doc-image" style="margin: 0;">
+            </div>
+
+            <section id="download" class="doc-section">
+                <h2>1. Download & Installation</h2>
+                <p>The native Android app is distributed directly via authenticated secure APK downloads.</p>
+                <ol>
+                    <li>Log into your account on your Android phone browser at <a href="https://family-budget.getdigraw.com">family-budget.getdigraw.com</a>.</li>
+                    <li>Navigate to <strong>Settings → Download Android App</strong> (or access <code>/api/v1/app/download</code>).</li>
+                    <li>Download the signed release APK (e.g. <code>family-budget-tracker-v1.0.79.apk</code>).</li>
+                    <li>Tap the downloaded file to install. If prompted by Android, allow "Install from this source".</li>
+                    <li>Open <strong>Family Budget</strong> and log in with your email or Google account.</li>
+                </ol>
+            </section>
+
+            <section id="biometrics" class="doc-section">
+                <h2>2. Biometric App Lock (Fingerprint & Face ID)</h2>
+                <p>Protect your financial privacy whenever you hand your phone to someone else.</p>
+                <ol>
+                    <li>In the mobile app, tap <strong>Settings</strong> in the bottom navigation.</li>
+                    <li>Toggle <strong>"Enable Biometric Lock"</strong>.</li>
+                    <li>Confirm with your fingerprint or face scan.</li>
+                    <li><strong>Security Coverage:</strong> Biometric authentication is enforced both on initial app launch and whenever the app resumes from the background.</li>
+                </ol>
+            </section>
+
+            <section id="push-ingestion" class="doc-section">
+                <h2>3. Real-Time Bank Push Notification Ingestion</h2>
+                <p>Never manually type a coffee or grocery receipt again. The mobile app can capture transaction push notifications sent by your banking apps in real time.</p>
+
+                <div class="info-box">
+                    <strong>🔒 Hybrid Privacy Filter:</strong><br>
+                    The on-device listener checks notifications against whitelisted banking package IDs (e.g. Barclays, Monzo, Revolut, Google Wallet) OR matches currency symbols (`£`, `$`, `€`, `₹`) + financial verbs (*spent*, *paid*, *debited*) with your active account names. All personal messages (WhatsApp, SMS, cameras) are strictly ignored on-device.
+                </div>
+
+                <h3>How to Enable:</h3>
+                <ol>
+                    <li>Go to <strong>Settings → Notification Listener</strong> in the mobile app.</li>
+                    <li>Tap <strong>"Grant Notification Access"</strong> to open Android system settings and toggle permission on for Family Budget Tracker.</li>
+                    <li>Whenever you tap your card or pay with Google Wallet, the app captures the alert, parses the amount and merchant, categorizes it, and adds it to your ledger with zero delay.</li>
+                </ol>
+            </section>
+
+            <section id="skia-charts" class="doc-section">
+                <h2>4. Interactive Skia Charts</h2>
+                <p>Built with Shopify React Native Skia for 60fps hardware-accelerated fluid touch interactions:</p>
+                <ul>
+                    <li><strong>Cash Flow Sparklines:</strong> Real-time mini sparklines in the dashboard header.</li>
+                    <li><strong>Radial Category Donut:</strong> Smooth touch-enabled category breakdowns.</li>
+                    <li><strong>Multi-Cycle Spending Trend Lines:</strong> Touch and scrub across historical pay cycles.</li>
+                    <li><strong>Interactive Mortgage Amortization:</strong> Scrub along your loan repayment curve.</li>
+                </ul>
+            </section>
+
+            <section id="voice-mobile" class="doc-section">
+                <h2>5. Hands-Free Voice Commands</h2>
+                <p>Tap the floating microphone on any mobile screen to dictate transactions:</p>
+                <ul>
+                    <li><em>"Paid £45 for petrol on Barclaycard"</em></li>
+                    <li><em>"Received £250 freelance payment in Chase"</em></li>
+                    <li><em>"Quick fund £50 to Holiday goal"</em></li>
+                </ul>
+            </section>
+
+            <section id="updates" class="doc-section">
+                <h2>6. In-App Updates</h2>
+                <p>Whenever a new version of the app is released, you will receive an in-app banner and push notification with release notes and a 1-tap download link to upgrade cleanly without losing any data.</p>
+            </section>
+
+            <div class="help-box">
+                <h3>Need Mobile Help?</h3>
+                <p>Email our mobile engineering team at <a href="mailto:support@getdigraw.com">support@getdigraw.com</a>.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Family Budget Tracker. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://family-budget.getdigraw.com/support/privacy">Privacy Policy</a>
+                <a href="https://family-budget.getdigraw.com/support/terms">Terms of Service</a>
+                <a href="mailto:support@getdigraw.com">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

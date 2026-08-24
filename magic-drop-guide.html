@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Magic Drop and Gmail Automation Guide - Zero-code automated bank statement sync for Family Budget Tracker">
+    <title>Magic Drop & Gmail Guide - Family Budget Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/docs.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="assets/images/logo.png" alt="Logo"
+                    style="width: 32px; height: 32px; border-radius: 6px; margin-right: 10px;">
+                <h1>Family Budget Tracker</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="user-manual.html">User Manual</a></li>
+                <li><a href="mobile-app.html">Mobile App</a></li>
+                <li><a href="magic-drop-guide.html" class="active">Magic Drop & Gmail</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="https://family-budget.getdigraw.com" class="btn-primary">Try App</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="sidebar">
+            <h3>Automation Setup</h3>
+            <ul>
+                <li><a href="#overview">1. How Magic Drop Works</a></li>
+                <li><a href="#google-drive">2. Google Drive Setup</a></li>
+                <li><a href="#gmail-sync">3. Gmail Zero-Code Sync</a></li>
+                <li><a href="#password-vault">4. PDF Password Vault</a></li>
+                <li><a href="#security">5. The Jailed Bot Model</a></li>
+            </ul>
+        </aside>
+
+        <main class="docs-content">
+            <h1>✨ Magic Drop & Gmail Automation Guide</h1>
+            <p class="lead">Set up seamless, zero-effort bank statement ingestion. Simply drop PDF statements into Google Drive or forward bank emails to automatically parse, categorize, and commit transactions to your ledger.</p>
+            <img src="assets/images/magic-drop-settings.png" alt="Magic Drop Settings" class="doc-image">
+
+            <section id="overview" class="doc-section">
+                <h2>1. How Magic Drop Works</h2>
+                <p>Magic Drop is an automated background ingestion engine that monitors your designated cloud storage:</p>
+                <ul>
+                    <li>Every 60 seconds, the background worker scans your shared folder for new PDF or image statements.</li>
+                    <li>Files are auto-decrypted using passwords from your secure Vault, parsed via Google Gemini Vision AI, mathematically reconciled, and recorded into your ledger.</li>
+                    <li>Once processed, the file is archived in a <code>Processed/</code> subfolder in your Drive so you have a complete permanent personal audit record.</li>
+                </ul>
+            </section>
+
+            <section id="google-drive" class="doc-section">
+                <h2>2. Google Drive Setup (3 Easy Steps)</h2>
+                <ol>
+                    <li>Create a new folder in your Google Drive named <strong>"MagicDrop"</strong>.</li>
+                    <li>Share the folder with our service bot email (find your unique service bot address in <strong>Settings → Magic Drop</strong> in the app) as an <strong>Editor</strong>.</li>
+                    <li>Copy the URL of your Google Drive folder, paste it into the <strong>Folder URL</strong> field in Magic Drop Settings, and click <strong>"Connect Folder"</strong>.</li>
+                </ol>
+            </section>
+
+            <section id="gmail-sync" class="doc-section">
+                <h2>3. Gmail Zero-Code Automated Ingestion</h2>
+                <p>Automatically import bank statements delivered directly to your email inbox without any third-party tools.</p>
+
+                <h3>Step 1: Create Gmail Labels</h3>
+                <ul>
+                    <li><code>MagicDrop/Budgeting</code> (for checking and credit card statements)</li>
+                    <li><code>MagicDrop/NonBudgeting</code> (for savings, investment, and mortgage statements)</li>
+                </ul>
+
+                <h3>Step 2: Set Up Gmail Ingestion Apps Script</h3>
+                <p>Using Google Apps Script inside your own Google account guarantees your email credentials and data never leave your Google cloud perimeter:</p>
+                <ol>
+                    <li>Visit <a href="https://script.google.com">script.google.com</a> and click <strong>"New Project"</strong>.</li>
+                    <li>Paste the standard Magic Drop ingestion script (available under <strong>Settings → Magic Drop → Gmail Setup</strong> in the app).</li>
+                    <li>Set your Google Drive MagicDrop folder ID.</li>
+                    <li>Add a <strong>Time-Driven Trigger</strong> to run the script every 10 or 15 minutes.</li>
+                    <li>Create Gmail filters to auto-apply the <code>MagicDrop/Budgeting</code> label to incoming bank statement emails.</li>
+                </ol>
+            </section>
+
+            <section id="password-vault" class="doc-section">
+                <h2>4. Statement Password Vault</h2>
+                <p>Most banks (e.g. Barclays, SBI, HDFC) encrypt PDF statements with your date of birth or PAN number. To enable automated sync while you are away:</p>
+                <ol>
+                    <li>Navigate to <strong>Settings → Statement Passwords (Vault)</strong>.</li>
+                    <li>Add the password associated with your bank's statement format.</li>
+                    <li>The key is encrypted in our database using <strong>AES-256</strong> and only unlocked in-memory for the millisecond required to open the PDF during ingestion.</li>
+                </ol>
+            </section>
+
+            <section id="security" class="doc-section">
+                <h2>5. The "Jailed Bot" Security Guarantee</h2>
+                <div class="success-box">
+                    <strong>🔒 Complete Isolation:</strong><br>
+                    Our service bot has restricted access strictly to the single folder you explicitly share. It has zero visibility into your wider Google Drive or email inbox. You can revoke access and kill the connection instantly at any moment from your Google Drive permissions.
+                </div>
+            </section>
+
+            <div class="help-box">
+                <h3>Need Setup Support?</h3>
+                <p>Email our integration support at <a href="mailto:support@getdigraw.com">support@getdigraw.com</a>.</p>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Family Budget Tracker. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://family-budget.getdigraw.com/support/privacy">Privacy Policy</a>
+                <a href="https://family-budget.getdigraw.com/support/terms">Terms of Service</a>
+                <a href="mailto:support@getdigraw.com">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

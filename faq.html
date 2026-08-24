@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Frequently Asked Questions about Family Budget Tracker - Pricing, Features, Security, and more">
+        content="Frequently Asked Questions about Family Budget Tracker - Pricing, Features, Security, Mobile App, and AI OCR">
     <title>FAQ - Family Budget Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/docs.css">
@@ -21,10 +21,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="user-manual.html">User Manual</a></li>
-                <li><a href="videos.html">Video Demos</a></li>
-                <li><a href="faq.html" class="active">FAQ</a></li>
                 <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="user-manual.html">User Manual</a></li>
+                <li><a href="mobile-app.html">Mobile App</a></li>
+                <li><a href="magic-drop-guide.html">Magic Drop & Gmail</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="videos.html">Videos</a></li>
                 <li><a href="https://family-budget.getdigraw.com" class="btn-primary">Try App</a></li>
             </ul>
         </div>
@@ -35,263 +37,97 @@
             <h3>Topics</h3>
             <ul>
                 <li><a href="#pricing">Pricing & Plans</a></li>
+                <li><a href="#mobile">Mobile App</a></li>
                 <li><a href="#security">Security & Privacy</a></li>
-                <li><a href="#ai">AI & Technology</a></li>
-                <li><a href="#family">Family Features</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#ai">AI & OCR Technology</a></li>
+                <li><a href="#mortgages-investments">Mortgages & Investments</a></li>
+                <li><a href="#family">Family Sharing</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
             <h1>❓ Frequently Asked Questions</h1>
-            <p class="lead">Find answers to common questions about Family Budget Tracker.</p>
+            <p class="lead">Clear answers to common questions about plans, security, mobile features, and accounting logic.</p>
 
             <section id="pricing" class="doc-section">
-                <h2>💰 Pricing & Business Model</h2>
-
-                <h3>How much does it cost?</h3>
-                <p>We have three tiers:</p>
-                <ul>
-                    <li><strong>Free Solo:</strong> 1 account, 12 categories, 50 transactions/month</li>
-                    <li><strong>Premium Solo:</strong> $9.99/month - Unlimited accounts, categories, transactions + 15
-                        AI
-                        statement uploads</li>
-                    <li><strong>Premium Family:</strong> $14.99/month - Everything in Solo + up to 5 family members + 30
-                        AI
-                        statement uploads</li>
-                </ul>
-                <img src="assets/images/pricing-cards.png" alt="Pricing Plans" class="doc-image"
-                    style="max-width: 600px;">
-                <div class="info-box">
-                    <strong>7-Day Free Trial:</strong> All premium plans include a one-time 7-day free trial. Try all
-                    features risk-free!
+                <h2>💰 Pricing & Plans</h2>
+                <div class="feature-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+                    <div class="feature-card">
+                        <h3>Premium Solo</h3>
+                        <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">£9.99 / $9.99 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-light);">per month</span></p>
+                        <p>Unlimited accounts, transactions, and categories. 15 AI statement uploads/month, daily AI coach insights, and full investment & mortgage tracking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Premium Family</h3>
+                        <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">£14.99 / $14.99 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-light);">per month</span></p>
+                        <p>Everything in Solo + up to 5 family members, shared transparency dashboards, 30 AI statement uploads/month, and member filters.</p>
+                    </div>
                 </div>
 
                 <h3>Is there a free trial?</h3>
-                <p>Yes! <strong>One-time 7-day free trial</strong> for premium plans. You can try either Premium Solo OR
-                    Premium Family (one trial per user). Cancel anytime during the trial without being charged.</p>
+                <p>Yes! Every premium plan includes a <strong>one-time 7-day free trial</strong> with full access to all features. You can cancel anytime during the trial with zero charge.</p>
 
-                <h3>What's your refund policy?</h3>
-                <p><strong>No refunds</strong> after the trial period ends. That's why we offer a 7-day free trial - to
-                    ensure you love it before paying! You can cancel anytime, and pro-rata credits apply if you
-                    downgrade mid-cycle.</p>
+                <h3>What is your refund policy?</h3>
+                <p>Because we offer a risk-free 7-day trial, subscriptions are non-refundable once billed. You can cancel anytime, and downgrades apply at the end of your billing cycle.</p>
+            </section>
+
+            <section id="mobile" class="doc-section">
+                <h2>📱 Android Mobile App</h2>
+
+                <h3>Do you have a native mobile app?</h3>
+                <p>Yes! We have a native <strong>Android Mobile App</strong> featuring Biometric app lock (fingerprint/face unlock), automatic bank push notification ingestion, hands-free voice commands, and hardware-accelerated Skia charts. Download directly from <a href="mobile-app.html">Mobile App Guide</a>.</p>
+
+                <h3>How does bank push notification ingestion work?</h3>
+                <p>When enabled on your Android phone, the app captures notifications sent by whitelisted banking apps or Google Wallet when you make a payment. It extracts the amount, description, and currency, categorizes the transaction, and adds it to your ledger instantly without needing manual input.</p>
             </section>
 
             <section id="security" class="doc-section">
-                <h2>🔒 Security & Privacy</h2>
+                <h2>🔒 Security & Data Privacy</h2>
 
-                <h3>Is my financial data safe?</h3>
-                <p>Absolutely! We take security seriously:</p>
-                <ul>
-                    <li>✅ Bank-level encryption (AES-256)</li>
-                    <li>✅ Application hosted on DigitalOcean (SOC 2 compliant)</li>
-                    <li>✅ Database powered by Neon (Serverless Postgres)</li>
-                    <li>✅ Storage secured by Cloudflare R2 (AES-256)</li>
-                    <li>✅ PostgreSQL database with encrypted backups</li>
-                    <li>✅ We NEVER store your bank login credentials</li>
-                    <li>✅ We NEVER sell your data to third parties</li>
-                    <li>✅ GDPR compliant (EU/UK/global)</li>
-                    <li>✅ All data encrypted in transit (HTTPS) and at rest</li>
-                </ul>
+                <h3>Do you connect to my bank account via Open Banking?</h3>
+                <p>No! We deliberately do <strong>not</strong> require third-party bank screen-scraping or direct bank logins. You maintain 100% custody of your banking credentials. Ingestion occurs via official statement uploads, Magic Drop folder sync, or on-device push alerts.</p>
 
-                <h3>Do you connect to my bank account?</h3>
-                <p>No! You upload PDF/image statements manually. This means:</p>
+                <h3>How is my financial data protected?</h3>
                 <ul>
-                    <li>✅ No security risk from bank API access</li>
-                    <li>✅ Works with ANY bank worldwide</li>
-                    <li>✅ You control what data you share</li>
-                    <li>❌ Not automatic (but safer!)</li>
-                </ul>
-
-                <h3>What happens to my uploaded statements?</h3>
-                <ul>
-                    <li><strong>Processing:</strong> Sent to Google Gemini AI for transaction extraction (95%+ accuracy)
-                    </li>
-                    <li><strong>Storage:</strong> Original PDF is <strong>permanently deleted</strong> after processing
-                    </li>
-                    <li><strong>Google's Guarantee:</strong> Google does NOT store or train on your data (paid API
-                        guarantee)</li>
-                    <li><strong>Your Control:</strong> You can delete extracted transactions anytime</li>
+                    <li>✅ <strong>Bank-Grade Encryption:</strong> All data in transit uses TLS 1.3 (HTTPS) and sensitive records/passwords are encrypted at rest with AES-256.</li>
+                    <li>✅ <strong>Enterprise Infrastructure:</strong> Application servers on DigitalOcean (SOC 2), serverless database on Neon PostgreSQL, file storage on Cloudflare R2.</li>
+                    <li>✅ <strong>No Data Selling:</strong> We never sell, rent, or monetize your financial data.</li>
+                    <li>✅ <strong>GDPR Compliant:</strong> Complete self-service account and data deletion at any time.</li>
                 </ul>
             </section>
 
             <section id="ai" class="doc-section">
-                <h2>🤖 AI & Technology</h2>
+                <h2>🤖 AI & OCR Technology</h2>
 
-                <h3>What AI do you use?</h3>
-                <p>We use <strong>Google Gemini (Vision-First)</strong> for:</p>
-                <ul>
-                    <li><strong>Statement processing:</strong> "Sees" your PDF like a human (95%+ accuracy)</li>
-                    <li><strong>Transaction categorization:</strong> Smart pattern learning</li>
-                    <li><strong>Duplicate detection:</strong> Prevents double-counting</li>
-                    <li><strong>Spending insights:</strong> Personalized budget recommendations</li>
-                </ul>
+                <h3>What AI model processes statements?</h3>
+                <p>We use <strong>Google Gemini Vision-First OCR</strong> on Google Cloud's enterprise API tier. Under Google's enterprise API terms, customer data is never stored or used to train public models.</p>
 
-                <h3>How accurate is the AI categorization?</h3>
-                <p><strong>95%+ accuracy</strong> on standard bank statements. Our <strong>Smart Categorization</strong>
-                    system uses two layers:</p>
-                <ul>
-                    <li><strong>Layer 1: Smart Global Caching:</strong> We instantly recognize millions of
-                        common stores (like Amazon, Starbucks, etc.) for zero-latency categorization.</li>
-                    <li><strong>Layer 2: Vision-First AI:</strong> Any unknown merchants are analyzed fresh by
-                        Google Gemini using the full context of the statement.</li>
-                </ul>
-                <div class="tip-box">
-                    <strong>💡 Why Vision-First?</strong> Traditional text extraction misses visual cues. Our AI "sees"
-                    your statement like a human, resulting in higher accuracy for unknown merchants.
-                </div>
+                <h3>Can it handle multi-account statements?</h3>
+                <p>Yes. If a bank PDF contains multiple accounts (such as a checking account and a linked ISA or savings account), our parser identifies each sub-account and splits transactions cleanly into separate accounts.</p>
+            </section>
 
-                <h3>What is User Bulk Override?</h3>
-                <p>If the AI or the Global Cache gets a category wrong, you can fix it manually. When you do,
-                    check <strong>"Update all future transactions"</strong> to create a
-                    <strong>User Bulk Override</strong>. This ensures your personal preference takes priority
-                    over the Global Cache for that merchant permanently.
-                </p>
+            <section id="mortgages-investments" class="doc-section">
+                <h2>🏡 Mortgages & Investments</h2>
 
-                <h3>What is "Magic Drop" Automation?</h3>
-                <p>Magic Drop allows you to sync your statements "invisibly" by connecting a Google Drive folder.
-                    Any PDF/image dropped in that folder is automatically processed and categorized every 60 seconds.
-                </p>
+                <h3>How does the mortgage interest rate solver work?</h3>
+                <p>When you link bank repayments to a mortgage account, the system uses dynamic amortization. If your monthly debit payment changes due to a rate adjustment, our binary search solver calculates the exact new annual interest rate from your balance, remaining term, and payment amount.</p>
 
-                <div class="success-box">
-                    <strong>🔒 The "Jailed Bot" Security Model</strong>
-                    <p>Our automation bot is blind to your entire Drive EXCEPT for the specific folder you share.
-                        You can evict the bot and kill the connection instantly at any time.</p>
-                </div>
-
-                <h3>How are password-protected PDFs handled?</h3>
-                <p>We provide a <strong>Security Vault</strong> where you can safely store bank statement passwords.
-                    These keys are <strong>encrypted at rest (AES-256)</strong> and only used in-memory to unlock
-                    files during the sync process.</p>
-
-                <h3>Which banks/statements do you support?</h3>
-                <p><strong>ANY bank</strong> that provides PDF or image statements! We've tested:</p>
-                <ul>
-                    <li>✅ Chase, Bank of America, Wells Fargo (USA)</li>
-                    <li>✅ Barclays, HSBC, Lloyds, Monzo (UK)</li>
-                    <li>✅ Revolut, Wise, Monzo (Digital Banks)</li>
-                </ul>
-                <p>If it's a PDF/image with transactions, we can process it!</p>
-
-                <h3>What are Spending Trends?</h3>
-                <p>Spending Trends provide a long-term view of your financial health using a <strong>5+1 logic</strong>:
-                    it compares your last 5 completed pay cycles to your current cycle to spot patterns, wealth gaps,
-                    and safety net trends.</p>
-
-                <h3>Do you support credit card statements?</h3>
-                <p>Yes! We automatically detect credit card vs bank account statements and apply the correct accounting
-                    logic. Credit card balances are treated as liabilities.</p>
+                <h3>How are investment and pension returns calculated?</h3>
+                <p>Pensions derive return performance directly from total cumulative net contributions versus current statement valuation truth, avoiding false performance distortions.</p>
             </section>
 
             <section id="family" class="doc-section">
-                <h2>👨‍👩‍👧‍👦 Family Features</h2>
+                <h2>👨‍👩‍👧‍👦 Family Sharing</h2>
 
-                <h3>How does family sharing work?</h3>
-                <ol>
-                    <li>Invite family members via code generated by app when you create family</li>
-                    <li>They create their account</li>
-                    <li>You all see shared budgets</li>
-                    <li>For premium family, each person can upload their own statements</li>
-                    <li>Combined view shows total family finances</li>
-                </ol>
-                <p><strong>Premium Family:</strong> Up to 5 family members, shared budgets, and collaborative tracking.
-                </p>
-
-                <h3>Can I control what family members see?</h3>
-                <p>No - and that's by design! The purpose of Family Budget is <strong>full financial
-                        transparency</strong>. When you invite someone to your family:</p>
-                <ul>
-                    <li>They see ALL family accounts, transactions, and budgets</li>
-                    <li>Everyone has the same view of family finances</li>
-                    <li>This encourages open communication about money</li>
-                    <li>Each member can still filter the dashboard by person to see individual spending</li>
-                </ul>
-                <div class="tip-box">
-                    <strong>If you need privacy:</strong> Use Premium Solo instead. Family Budget is for families who
-                    want complete transparency.
-                </div>
-
-                <h3>What if I want to remove a family member?</h3>
-                <p>Family members can remove themselves from family. Family owner can remove family members from family
-                    settings. Their transactions, accounts, budgets, goals, and settings stay with them.</p>
-            </section>
-
-            <section id="features" class="doc-section">
-                <h2>📊 Features & Functionality</h2>
-
-                <h3>Do you support multiple currencies?</h3>
-                <p>Yes! <strong>Multi-Currency Support</strong> including:</p>
-                <ul>
-                    <li>USD, EUR, GBP, INR, CAD, AUD, JPY, CNY, and more</li>
-                    <li>Each account can have its own currency</li>
-                    <li>Dashboard shows totals per currency (no forced conversion)</li>
-                    <li>Multi-currency families supported!</li>
-                </ul>
-
-                <h3>What's the difference between Physical and Virtual goals?</h3>
-                <ul>
-                    <li><strong>Physical Goals:</strong> Money in a separate account (e.g., savings account)
-                        <ul>
-                            <li>You manually transfer money</li>
-                            <li>We track if you've transferred this cycle</li>
-                        </ul>
-                    </li>
-                    <li><strong>Virtual Goals:</strong> Money allocated in your mind (still in checking)
-                        <ul>
-                            <li>No physical transfer needed</li>
-                            <li>We deduct from "Safe to Spend"</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Do you have a mobile app?</h3>
-                <p>Not yet! But our web app is <strong>fully mobile-responsive</strong>. Works great on phones/tablets.
-                    Native apps planned for 2026.</p>
-
-                <h3>Can I delete my account?</h3>
-                <p>Yes! Go to Settings → Delete Account. You'll need to:</p>
-                <ul>
-                    <li>Confirm with your password</li>
-                    <li>Type "DELETE MY ACCOUNT"</li>
-                    <li>All your data will be permanently deleted (we keep anonymized usage stats for service
-                        improvement)</li>
-                </ul>
+                <h3>Can family members see each other's accounts?</h3>
+                <p>Yes. Family Budget Tracker is built on a <strong>complete transparency model</strong> designed to foster open family financial discussions. All members share visibility into total household income, expenses, and savings goals, while retaining the ability to filter views by individual member.</p>
             </section>
 
             <section id="support" class="doc-section">
                 <h2>🆘 Support & Help</h2>
-
-                <h3>How do I get help?</h3>
-                <ol>
-                    <li><strong>Email:</strong> support@getdigraw.com (I respond within 24 hours)</li>
-                    <li><strong>In-app:</strong> Visit Support Center</li>
-                    <li><strong>Documentation:</strong> Privacy Policy, Terms of Service, AI Processing Disclosure</li>
-                </ol>
-
-                <h3>What if I find a bug?</h3>
-                <p>Please report it! Email support@getdigraw.com with:</p>
-                <ul>
-                    <li>What you were doing</li>
-                    <li>What happened vs what you expected</li>
-                    <li>Screenshots if possible</li>
-                </ul>
-                <p>I fix critical bugs within 24 hours!</p>
-
-                <h3>What countries do you support?</h3>
-                <p><strong>Available worldwide!</strong> As long as you have:</p>
-                <ul>
-                    <li>Internet connection</li>
-                    <li>Bank statements in PDF/image format</li>
-                    <li>One of our supported currencies</li>
-                </ul>
+                <p>Need help or found an edge case with your bank statement? Email us at <a href="mailto:support@getdigraw.com">support@getdigraw.com</a>. We respond to all inquiries within 24 hours.</p>
             </section>
-
-            <div class="help-box">
-                <h3>Still have questions?</h3>
-                <p>Email us at <a href="mailto:support@getdigraw.com">support@getdigraw.com</a> - we're here to help!
-                </p>
-            </div>
         </main>
     </div>
 

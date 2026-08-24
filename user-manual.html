@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Complete User Manual for Family Budget Tracker - Learn all features and how to use them">
+        content="Complete User Manual for Family Budget Tracker - Step-by-step guide for Web and Android Mobile features">
     <title>User Manual - Family Budget Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/docs.css">
@@ -21,10 +21,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="user-manual.html" class="active">User Manual</a></li>
-                <li><a href="videos.html">Video Demos</a></li>
-                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="getting-started.html">Getting Started</a></li>
+                <li><a href="user-manual.html" class="active">User Manual</a></li>
+                <li><a href="mobile-app.html">Mobile App</a></li>
+                <li><a href="magic-drop-guide.html">Magic Drop & Gmail</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="videos.html">Videos</a></li>
                 <li><a href="https://family-budget.getdigraw.com" class="btn-primary">Try App</a></li>
             </ul>
         </div>
@@ -32,571 +34,291 @@
 
     <div class="docs-container">
         <aside class="sidebar">
-            <h3>Contents</h3>
+            <h3>Table of Contents</h3>
             <ul>
-                <li><a href="#dashboard">1. Dashboard</a></li>
-                <li><a href="#notifications">2. Notifications</a></li>
+                <li><a href="#dashboard">1. Dashboard & Live Math</a></li>
+                <li><a href="#notifications">2. Notifications Center</a></li>
                 <li><a href="#accounts">3. Accounts Management</a></li>
-                <li><a href="#transactions">4. Transactions</a></li>
-                <li><a href="#ai-upload">5. AI Statement Upload & Insights</a></li>
-                <li><a href="#magic-drop">6. Magic Drop Automation</a></li>
+                <li><a href="#transactions">4. Transactions & Voice</a></li>
+                <li><a href="#ai-upload">5. AI Statement Upload</a></li>
+                <li><a href="#magic-drop">6. Magic Drop & Gmail</a></li>
                 <li><a href="#spending-trends">7. Spending Trends</a></li>
                 <li><a href="#budget-limits">8. Budget Limits</a></li>
                 <li><a href="#savings-goals">9. Savings Goals</a></li>
-                <li><a href="#reports">10. Reports</a></li>
-                <li><a href="#family">11. Family Sharing</a></li>
-                <li><a href="#settings">12. Settings</a></li>
-                <li><a href="#security-vault">13. Security & Password Vault</a></li>
+                <li><a href="#investments">10. Smart Investments</a></li>
+                <li><a href="#mortgages">11. Smart Mortgages</a></li>
+                <li><a href="#mobile-app">12. Android Mobile App</a></li>
+                <li><a href="#reports">13. Reports & Analytics</a></li>
+                <li><a href="#family">14. Family Sharing</a></li>
+                <li><a href="#security-vault">15. Security & Vault</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
-            <h1>📖 User Manual</h1>
-            <p class="lead">Complete guide to all features in Family Budget Tracker. Learn how to make the most of your
-                budgeting experience.</p>
+            <h1>📖 Complete User Manual</h1>
+            <p class="lead">Detailed documentation for all features across the Modern React Web App and the Native Android Mobile App.</p>
 
+            <!-- SECTION 1: DASHBOARD -->
             <section id="dashboard" class="doc-section">
-                <h2>1. Dashboard</h2>
-                <p>Your dashboard is the central hub showing your financial overview for the current pay cycle.</p>
+                <h2>1. Dashboard & "Safe to Spend" Live Math</h2>
+                <p>Your central command hub displays real-time cash flow, actionable AI insights, and pinned savings goals for the active pay cycle.</p>
                 <img src="assets/images/dashboard-overview.png" alt="Dashboard Overview" class="doc-image">
-                <p class="doc-image-caption">The main dashboard showing AI insights and financial summary</p>
+                <p class="doc-image-caption">The main dashboard showing Safe to Spend, AI insights, and pinned goals.</p>
 
-                <h3>1.1 Dashboard Tabs</h3>
-                <p>The dashboard has three main tabs:</p>
+                <h3>1.1 Understanding "Safe to Spend"</h3>
+                <p>Traditional apps only display account balances, leading to accidental overspending when future bills or savings are forgotten. <strong>Safe to Spend</strong> calculates the exact discretionary money you can spend today without running short before your next payday:</p>
+                <div class="info-box">
+                    <strong>Safe to Spend Formula:</strong><br>
+                    <code>Safe to Spend = Total Income − Total Expenses − Physical Goals − Virtual Goals − Scheduled Bills</code>
+                </div>
+
+                <h3>1.2 The Live Math Breakdown</h3>
+                <p>Click on the <strong>"Live Math"</strong> button on the Safe to Spend card to open an interactive modal explaining every component of your calculation:</p>
                 <ul>
-                    <li><strong>Overview:</strong> Financial summary, AI insights, and spending breakdown</li>
-                    <li><strong>Savings Goals:</strong> Quick view of your physical and virtual goals</li>
-                    <li><strong>Transactions:</strong> Search, filter, and manage transactions</li>
+                    <li><strong>Income Received:</strong> All salary, deposits, and income credited during this pay cycle.</li>
+                    <li><strong>Discretionary Expenses:</strong> Total debit transactions excluding internal transfers and refunds.</li>
+                    <li><strong>Physical Goals Funded:</strong> Money transferred to external savings/brokerage accounts.</li>
+                    <li><strong>Virtual Goals Allocated:</strong> Mental envelope reserves earmarked inside your checking account.</li>
+                    <li><strong>Upcoming Recurring Bills:</strong> Scheduled bills due before your pay cycle resets.</li>
                 </ul>
 
-                <h3>1.2 Key Metrics</h3>
-                <ul>
-                    <li><strong>Income:</strong> Total money received this pay cycle</li>
-                    <li><strong>Expenses:</strong> Total spent (excluding transfers and refunds)</li>
-                    <li><strong>Physical Goals:</strong> Money transferred to savings accounts</li>
-                    <li><strong>Virtual Goals:</strong> Money mentally allocated (still in checking)</li>
-                    <li><strong>Safe to Spend:</strong> Income - Expenses - Physical - Virtual</li>
-                </ul>
-
-                <h3>1.3 AI-Powered Insights</h3>
-                <p>Premium users get personalized spending insights updated daily:</p>
-                <ul>
-                    <li>Spending trends and patterns</li>
-                    <li>Budget recommendations</li>
-                    <li>Unusual spending alerts</li>
-                    <li>Savings opportunities</li>
-                </ul>
+                <h3>1.3 Daily AI Financial Coach Insights</h3>
+                <p>Premium subscribers receive automated AI insights refreshed every 24 hours. The coach identifies unusual merchant spikes, suggests savings opportunities, and alerts you to budget pace trends.</p>
 
                 <h3>1.4 Family Member Filter</h3>
-                <p>In family accounts, filter the dashboard to see:</p>
-                <ul>
-                    <li><strong>All Family:</strong> Combined view of everyone's finances</li>
-                    <li><strong>Individual Member:</strong> Just one person's spending</li>
-                </ul>
+                <p>Toggle between <strong>"All Family"</strong> (combined household cash flow) or select any individual member to inspect their personal spending and account breakdown.</p>
             </section>
 
+            <!-- SECTION 2: NOTIFICATIONS -->
             <section id="notifications" class="doc-section">
-                <h2>2. Notifications</h2>
-                <p>Stay updated with critical alerts. Notifications are available for <strong>everyone</strong> (Free &
-                    Premium).</p>
-                <img src="assets/images/notifications-list.png" alt="Notifications List" class="doc-image">
-                <p class="doc-image-caption">Full history of your notifications and alerts</p>
+                <h2>2. Notifications Center</h2>
+                <p>Stay informed with non-intrusive, functional alerts available across both Web and Mobile.</p>
+                <img src="assets/images/notifications-list.png" alt="Notifications Center" class="doc-image">
+                <p class="doc-image-caption">Notification log with audit trail and direct action links.</p>
 
-                <div class="tip-box">
-                    <strong>📍 Where to find them:</strong> Click the <strong>Bell Icon</strong> in the top-right corner
-                    of the app.
-                </div>
-
-                <h3>2.1 When will I get a notification?</h3>
-                <p>The system sends alerts for specific events:</p>
+                <h3>2.1 Trigger Events</h3>
                 <ul>
-                    <li><strong>Budget Warnings:</strong> When you exceed <strong>90%</strong> or <strong>100%</strong>
-                        of a category limit.</li>
-                    <li><strong>Recurring Transactions:</strong> When a scheduled transaction (bill, subscription) is
-                        processed.</li>
-                    <li><strong>Savings Goals:</strong> When an automatic goal allocation is made.</li>
-                    <li><strong>Family Updates:</strong>
-                        <ul>
-                            <li><strong>Owner:</strong> Gets notified when someone joins (Success) or leaves (Info).
-                            </li>
-                            <li><strong>Member:</strong> Gets notified if they are removed by the owner (Warning).</li>
-                        </ul>
-                    </li>
-                    <li><strong>Subscription:</strong> When your Free Trial is ending (3 days prior).</li>
+                    <li><strong>Budget Limit Warnings:</strong> Alerts triggered when you hit <strong>90%</strong> or exceed <strong>100%</strong> of a category monthly limit.</li>
+                    <li><strong>Recurring Bills Processed:</strong> Daily confirmation when a scheduled bill or subscription is logged.</li>
+                    <li><strong>Goal Allocations:</strong> Confirmation when automatic savings goal deductions occur.</li>
+                    <li><strong>Family Membership:</strong> Notifications when invited members accept or leave family groups.</li>
+                    <li><strong>Mobile App Updates:</strong> Alerts when new native Android APK releases are available for direct upgrade.</li>
                 </ul>
-
-                <p><strong>Note:</strong> We do not send marketing spam. These are strictly functional alerts to help
-                    you manage your money.</p>
             </section>
 
+            <!-- SECTION 3: ACCOUNTS -->
             <section id="accounts" class="doc-section">
                 <h2>3. Accounts Management</h2>
-                <p>Manage all your bank accounts, credit cards, and savings accounts in one place.</p>
+                <p>Track checking accounts, credit cards, savings, ISAs, pensions, and mortgages in any global currency.</p>
+                
+                <h3>3.1 Account Classifications</h3>
+                <ul>
+                    <li><strong>Budgeting Accounts:</strong> Checking and Credit Card accounts that directly affect daily cash flow and Safe to Spend.</li>
+                    <li><strong>Non-Budgeting Accounts:</strong> Savings, Investment portfolios, Pensions, and Mortgages. These represent long-term assets or debts and do not reduce daily spendable cash.</li>
+                </ul>
 
-                <h3>3.1 Adding an Account</h3>
-                <ol>
-                    <li>Click <strong>Accounts</strong> in navigation</li>
-                    <li>Click <strong>"+ Add Account"</strong></li>
-                    <li>Fill in:
-                        <ul>
-                            <li><strong>Account Name:</strong> e.g., "Chase Checking"</li>
-                            <li><strong>Account Type:</strong> Bank Account or Credit Card</li>
-                            <li><strong>Currency:</strong> USD, GBP, EUR, INR, etc.</li>
-                            <li><strong>Initial Balance & Date:</strong>
-                                <ul>
-                                    <li><strong>CRITICAL:</strong> Must match actual bank balance on the selected date.
-                                    </li>
-                                    <li><strong>Bank Accounts:</strong> Positive value (e.g., 5000) for assets.</li>
-                                    <li><strong>Credit Cards:</strong> Negative value (e.g., -1200) for debt.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Budgeting Account Checkbox:</strong>
-                                <ul>
-                                    <li><strong>Check this</strong> for cash-flow accounts (Checking, Credit Cards).
-                                    </li>
-                                    <li><strong>Uncheck</strong> for investment or mortgage accounts.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Click <strong>"Add Account"</strong></li>
-                </ol>
-
+                <h3>3.2 Initial Balance Precision Rule</h3>
                 <div class="warning-box">
-                    <strong>⚠️ Important:</strong> Accurate "Safe to Spend" relies on correct Initial Balances. Always
-                    use the Closing Balance from your bank statement for the date prior to your transaction history.
-                </div>
-            </section>
-
-            <section id="transactions" class="doc-section">
-                <h2>4. Transactions</h2>
-                <p>Add, edit, and manage all your financial transactions.</p>
-                <img src="assets/images/transaction-audit.png" alt="Transaction Audit" class="doc-image">
-                <p class="doc-image-caption">Search, filter, and audit your transaction history</p>
-
-                <h3>4.1 Adding a Transaction Manually</h3>
-                <ol>
-                    <li>Click <strong>Add → Transaction</strong></li>
-                    <li>Select <strong>transaction type:</strong> (Expense, Income, Internal Transfer)</li>
-                    <li>Fill in details (Date, Amount, Account, Category, Note)</li>
-                    <li>Click <strong>"Add Transaction"</strong></li>
-                </ol>
-
-                <h3>4.2 Internal Transfers</h3>
-                <p>When moving money between your own accounts, use "Internal Transfer" to create linked debit/credit
-                    entries.</p>
-
-                <h3>4.3 Recurring Transactions</h3>
-                <p>Set up automatic monthly transactions (Rent, Netflix, Gym).</p>
-
-                <div class="info-box">
-                    <strong>Plan Limits:</strong>
+                    <strong>⚠️ CRITICAL SETUP RULE:</strong> Set the initial balance date to the day <em>before</em> your first uploaded statement, and use the exact closing balance from that day.
                     <ul>
-                        <li><strong>Free Plan:</strong> Max 10 Recurring Transactions.</li>
-                        <li><strong>Premium Plan:</strong> Unlimited Recurring Transactions.</li>
+                        <li><strong>Bank / Savings:</strong> Enter positive numbers (e.g. <code>£3,500.00</code>).</li>
+                        <li><strong>Credit Cards:</strong> Enter negative numbers for owed debt (e.g. <code>-£850.00</code>).</li>
                     </ul>
                 </div>
-
-                <div class="tip-box">
-                    <strong>⏳ Processing Time:</strong> Our system scans for recurring transactions
-                    <strong>daily</strong>. If you set a transaction for today, it might appear a few hours after
-                    midnight. Please be patient!
-                </div>
-
-                <ol>
-                    <li>Click <strong>Add → Recurring Transaction</strong></li>
-                    <li>Fill in transaction details</li>
-                    <li>Set <strong>recurrence day</strong> (1-31)</li>
-                    <li>Choose <strong>status:</strong> Active or Paused</li>
-                </ol>
-
-                <h3>4.4 Smart Global Cache & Overrides</h3>
-                <p>To save you time, the app uses a <strong>Global Merchant Cache</strong> that learns from all users.
-                    If many users categorize "Uber" as "Transport", it will be default for you too.</p>
-                <ul>
-                    <li><strong>User Overrides:</strong> If you prefer a different category, just change it once. The
-                        app will
-                        "remember" your preference for all future transactions from that merchant.</li>
-                    <li><strong>Bulk Override:</strong> When editing a transaction, check the <strong>"Update all future
-                            transactions"</strong> box to apply your category correction globally across your account.
-                    </li>
-                </ul>
-                <div class="info-box">
-                    <strong>🔒 Privacy Note:</strong> Metadata like amounts and dates are never shared. Only the
-                    <em>Merchant Name → Category</em> mapping is stored in the Global Cache.
-                </div>
-
-                <h3>4.5 Data Export (Premium)</h3>
-                <p>Need to analyze data in Excel? You can export your filtered view.</p>
-                <ol>
-                    <li>Go to the <strong>Transaction Audit</strong> tab.</li>
-                    <li>Apply any filters (Date, Category, Account, Family Member).</li>
-                    <li>Click the <strong>"Export to CSV"</strong> button.</li>
-                    <li>The CSV file will download with only the filtered transactions.</li>
-                </ol>
             </section>
 
+            <!-- SECTION 4: TRANSACTIONS & VOICE -->
+            <section id="transactions" class="doc-section">
+                <h2>4. Transactions, Voice Commands & Global Cache</h2>
+                <p>Complete ledger management with search, filters, CSV export, and voice transaction logging.</p>
+                <img src="assets/images/transaction-audit.png" alt="Transaction Audit Ledger" class="doc-image">
+                <p class="doc-image-caption">Full transaction ledger with search, category filtering, and CSV export.</p>
+
+                <h3>4.1 Adding Transactions</h3>
+                <ul>
+                    <li><strong>Expense / Income:</strong> Log standard cash-in / cash-out transactions.</li>
+                    <li><strong>Internal Transfer:</strong> Moving money between your own accounts (e.g. Checking to Savings) creates linked transactions that never distort expense totals.</li>
+                </ul>
+
+                <h3>4.2 Smart Global Cache & User Bulk Overrides</h3>
+                <p>Our intelligent categorization system recognizes millions of global merchants instantly:</p>
+                <ul>
+                    <li><strong>Global Cache:</strong> Standard merchants (e.g. "Tesco", "Uber", "Amazon") are auto-categorized with zero latency.</li>
+                    <li><strong>Bulk Overrides:</strong> When editing a transaction, check <strong>"Update all future transactions"</strong>. The system saves a personal override that permanently takes precedence over the global cache for that merchant.</li>
+                </ul>
+
+                <h3>4.3 Voice Commands (Web & Mobile)</h3>
+                <p>Tap the microphone icon to log transactions or filter your ledger with natural voice commands:</p>
+                <ul>
+                    <li><em>"Spent £14.50 on lunch at Pret"</em> → Creates an expense under Dining Out.</li>
+                    <li><em>"Show all groceries from last week"</em> → Filters ledger dynamically.</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 5: AI STATEMENT UPLOAD -->
             <section id="ai-upload" class="doc-section">
-                <h2>5. AI Statement Upload & Insights (Premium)</h2>
-                <p>Upload bank statements for auto-extraction and get daily AI-powered insights on your finances.</p>
+                <h2>5. AI Statement Upload & Multi-Account Splitting</h2>
+                <p>Google Gemini Vision OCR extracts transactions from PDF or image statements with 95%+ accuracy.</p>
+                <img src="assets/images/ai-statement-upload.png" alt="AI Statement Upload Screen" class="doc-image">
 
-                <div class="warning-box">
-                    <strong>⚠️ Premium Feature:</strong> Requires Premium Solo or Premium Family subscription.
-                </div>
+                <h3>5.1 Multi-Account PDF Auto-Splitting</h3>
+                <p>Many banks (such as Barclays, SBI, HDFC) combine multiple accounts (e.g. Current Account + ISA / PPF) in a single monthly PDF. Our AI automatically detects multiple account identities, splits the statement into separate processing streams, and routes each account's transactions to the appropriate ledger.</p>
 
-                <img src="assets/images/ai-statement-upload.png" alt="AI Statement Upload" class="doc-image">
-                <p class="doc-image-caption">Upload statements and review extracted transactions</p>
-
-                <h3>5.1 How It Works</h3>
-                <ol>
-                    <li>You upload a PDF or image of your bank statement (Max ~10 pages)</li>
-                    <li>Google Gemini AI "reads" the statement like a human</li>
-                    <li>Extracts all transactions with 95%+ accuracy</li>
-                    <li>Categorizes transactions automatically</li>
-                    <li>Detects duplicates to prevent double-counting</li>
-                    <li>You review and confirm</li>
-                </ol>
-
-                <h3>5.2 🧠 AI Insights</h3>
-                <p>Premium members get a personalized financial analysis, refreshed every 24 hours.</p>
-                <img src="assets/images/ai-insights.png" alt="AI Insights" class="doc-image">
-                <div class="tip-box">
-                    <strong>💡 Note:</strong> Insights are cached for 24 hours for efficiency.
-                </div>
+                <h3>5.2 Mathematical Reconciliation Check</h3>
+                <p>Every upload is verified against the bank statement's official Opening and Closing summary balances:</p>
+                <ul>
+                    <li><code>Opening Balance + Total Credits − Total Debits = Closing Balance</code></li>
+                    <li>A <strong>100% Reconciliation Badge</strong> guarantees zero missing or duplicated transactions.</li>
+                </ul>
             </section>
 
+            <!-- SECTION 6: MAGIC DROP & GMAIL -->
             <section id="magic-drop" class="doc-section">
-                <h2>6. Magic Drop Automation (Premium)</h2>
-                <p>Trigger an <strong>Invisible Sync</strong> of your statements by connecting a Google Drive folder.
-                </p>
-
-                <h3>6.1 Setup Instructions</h3>
-                <ol>
-                    <li>Create a folder named <strong>"MagicDrop"</strong> in your Google Drive.</li>
-                    <li>Share the folder with our service bot as an <strong>Editor</strong> (find the bot email in
-                        Settings → Magic Drop).</li>
-                    <li>Paste the folder link into the Magic Drop settings in the app.</li>
-                    <li><strong>Drop and Forget:</strong> Any statement dropped into this folder will be processed
-                        automatically every 60 seconds.</li>
-                </ol>
-
-                <div class="success-box">
-                    <strong>🔒 The "Jailed Bot" Security Model</strong>
-                    <p>Our bot can only see the specific folder you share with it. It is blind to the rest of your
-                        Drive.
-                        You can evict the bot and kill the connection instantly by removing its access in your
-                        Google Drive settings at any time.</p>
-                </div>
-
-                <h3>6.2 Processing Preferences</h3>
-                <p>Customize how Magic Drop handles your files in <strong>Settings → Magic Drop</strong>:</p>
-                <ul>
-                    <li><strong>Enable Magic Drop:</strong> Toggle the entire automation on/off.</li>
-                    <li><strong>Silent Import:</strong> Process files quietly without sending a notification for every
-                        success.</li>
-                    <li><strong>Auto-Decrypt:</strong> Enable the app to attempt unlocking PDFs using your stored
-                        passwords.</li>
-                </ul>
+                <h2>6. Magic Drop & Gmail Automation</h2>
+                <p>Enable invisible, hands-free statement ingestion without opening the app.</p>
+                <img src="assets/images/magic-drop-settings.png" alt="Magic Drop Settings" class="doc-image">
+                <p>See our full <a href="magic-drop-guide.html">Magic Drop & Gmail Guide</a> for step-by-step setup instructions for Google Drive and Gmail time-driven triggers.</p>
             </section>
 
+            <!-- SECTION 7: SPENDING TRENDS -->
             <section id="spending-trends" class="doc-section">
-                <h2>7. Spending Trends (Premium)</h2>
-                <p>Long-term visibility into your financial health across multiple pay cycles.</p>
+                <h2>7. Spending Trends (5+1 Pay Cycle Logic)</h2>
+                <p>Understand your long-term financial trajectory across multiple pay cycles.</p>
+                <img src="assets/images/advanced-reports.png" alt="Spending Trends and Analytics" class="doc-image">
 
-                <h3>7.1 The 5+1 Logic</h3>
-                <p>The Trends dashboard displays your last 5 completed pay cycles plus your current cycle.
-                    This allows for real-time comparison against your recent historical average.</p>
-
-                <h3>7.2 Trend Modes</h3>
+                <h3>7.1 The 5+1 Comparative View</h3>
+                <p>The Trends engine plots your last <strong>5 completed pay cycles</strong> alongside your <strong>active cycle</strong>. This allows you to spot whether your current pace is above or below your historical benchmark.</p>
                 <ul>
-                    <li><strong>Wealth Gap:</strong> Analysis of your Income vs Expenses over time.</li>
-                    <li><strong>Safety Net:</strong> Overview of your savings and emergency fund buildup.</li>
-                    <li><strong>AI Trend Insights:</strong> Deep-dive analysis of your 6-month patterns, highlighting
-                        long-term wins and areas for optimization.</li>
+                    <li><strong>Wealth Gap:</strong> Plots net surplus (Income − Expenses) over time.</li>
+                    <li><strong>Safety Net:</strong> Tracks cumulative emergency fund and liquid savings reserves.</li>
                 </ul>
             </section>
 
+            <!-- SECTION 8: BUDGET LIMITS -->
             <section id="budget-limits" class="doc-section">
-                <h2>8. Budget Limits</h2>
-                <p>Set monthly spending limits for each category and track your progress.</p>
+                <h2>8. Category Budget Limits</h2>
+                <p>Set spending caps per category to keep your budget under control.</p>
                 <img src="assets/images/budget-limits.png" alt="Budget Limits" class="doc-image">
-                <p class="doc-image-caption">Visual progress bars for category budgets</p>
-                <p><strong>Note:</strong> Alerts (90% / 100%) are based on the <strong>Calendar Month</strong>, not your
-                    Pay Cycle.</p>
+                <div class="info-box">
+                    <strong>Calendar Month Tracking:</strong> Budget limits calculate spending based on the 1st to last day of each calendar month, ensuring recurring monthly utility and grocery allowances remain consistent regardless of pay dates.
+                </div>
             </section>
 
+            <!-- SECTION 9: SAVINGS GOALS -->
             <section id="savings-goals" class="doc-section">
-                <h2>9. Savings Goals</h2>
-                <p>Set financial goals and track your progress automatically.</p>
-
-                <div class="tip-box">
-                    <strong>💡 Pro Tip:</strong> Keep your Goal Name the same as your bank transaction description
-                    (e.g., "Transfer to Aesop Settings").
-                </div>
-
-                <h3>9.1 Physical vs Virtual Goals</h3>
-                <p>See <a href="getting-started.html#step6">Getting Started</a> for a detailed comparison.</p>
-
+                <h2>9. Savings Goals (Physical vs. Virtual)</h2>
+                <p>Set targets for holidays, emergency funds, home renovations, and major purchases.</p>
                 <img src="assets/images/savings-goals.png" alt="Savings Goals" class="doc-image">
-                <p class="doc-image-caption">Track your savings goals progress</p>
 
-                <h3>9.2 Dashboard Pinning</h3>
-                <p>Want to see a goal's progress every time you log in?</p>
-                <ul>
-                    <li>On the Savings Goals page, check the <strong>"Dashboard"</strong> box on any goal card.</li>
-                    <li>The goal's progress bar will appear on your main Dashboard for quick access.</li>
-                </ul>
-
-                <h3>9.3 History & Visualization</h3>
-                <ul>
-                    <li><strong>Cycle History:</strong> In the Savings Goals page, see a complete history of every
-                        cycle's allocation status (Funded/Pending).</li>
-                    <li><strong>Virtual Vault Pie Chart:</strong> For Virtual Goals, view a visual breakdown of your
-                        "Mental Vault" to see exactly how your checking account balance is allocated.</li>
-                </ul>
-
-                <h3>9.4 Physical Goal Actions</h3>
-                <ul>
-                    <li><strong>⚡ Fund Transfer:</strong> Log a manual transfer you made.</li>
-                    <li><strong>Important:</strong> If the transaction exists in your statement, <strong>uncheck "Source
-                            Side"</strong> to avoid duplicates.</li>
-                </ul>
-
-                <h3>9.5 Virtual Goal Actions</h3>
-                <ul>
-                    <li><strong>⚡ Quick Fund:</strong> Allocate money (creates internal ledger entry).</li>
-                </ul>
-
-                <h3>9.6 Best Practices for Goal Matching</h3>
-                <div class="warning-box">
-                    <strong>⚠️ IMPORTANT:</strong> To ensure transactions are matched to the correct goal, follow these
-                    naming conventions!
-                </div>
-
-                <h4>How the Matching Algorithm Works</h4>
-                <p>The system automatically matches transactions to goals by analyzing the
-                    <strong>note/description</strong> field. Here's how it works:
-                </p>
-
-                <ul>
-                    <li><strong>Virtual Goals:</strong> When you use "Quick Fund", the system creates a transaction with
-                        note: <code>"Allocation to {Goal Name}"</code></li>
-                    <li><strong>Physical Goals:</strong> When you use "Log Transfer", the system creates a transaction
-                        with note: <code>"Transfer for {Goal Name}"</code></li>
-                    <li><strong>Exact Match Required:</strong> The goal name in the note must <strong>exactly
-                            match</strong> your goal's name (case-insensitive)</li>
-                </ul>
-
-                <h4>✅ DO's</h4>
-                <ul>
-                    <li><strong>Use the built-in buttons:</strong> "Quick Fund" (virtual) or "Log Transfer" (physical) -
-                        these automatically format notes correctly</li>
-                    <li><strong>Keep goal names unique:</strong> Don't create goals with similar names (e.g., "Fund" and
-                        "Emergency Fund")</li>
-                    <li><strong>Manual transactions:</strong> If adding manually, use exact format:
-                        <ul>
-                            <li>Virtual: <code>"Allocation to Emergency Fund"</code></li>
-                            <li>Physical: <code>"Transfer for Emergency Fund"</code></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h4>❌ DON'Ts</h4>
-                <ul>
-                    <li><strong>Don't use partial names:</strong> "Allocation to Fund" won't match "Emergency Fund"</li>
-                    <li><strong>Don't add extra text:</strong> "Allocation to Emergency Fund for savings" won't match
-                    </li>
-                    <li><strong>Don't mix formats:</strong> Stick to either "Allocation to" or "Transfer for" based on
-                        goal type</li>
-                </ul>
-
-                <h4>Example Scenarios</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Goal Name</th>
-                            <th>Transaction Note</th>
-                            <th>Will Match?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Emergency Fund</td>
-                            <td>"Allocation to Emergency Fund"</td>
-                            <td>✅ Yes</td>
-                        </tr>
-                        <tr>
-                            <td>Emergency Fund</td>
-                            <td>"Allocation to emergency fund"</td>
-                            <td>✅ Yes (case-insensitive)</td>
-                        </tr>
-                        <tr>
-                            <td>Emergency Fund</td>
-                            <td>"Allocation to car service"</td>
-                            <td>❌ No (different goal)</td>
-                        </tr>
-                        <tr>
-                            <td>Emergency Fund</td>
-                            <td>"Allocation to Fund"</td>
-                            <td>❌ No (partial name)</td>
-                        </tr>
-                        <tr>
-                            <td>car service</td>
-                            <td>"Allocation to car service"</td>
-                            <td>✅ Yes</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="tip-box">
-                    <strong>💡 Pro Tip:</strong> Always use the built-in "Quick Fund" or "Log Transfer" buttons to avoid
-                    manual errors. The system handles the formatting automatically!
-                </div>
-            </section>
-
-            <section id="reports" class="doc-section">
-                <h2>10. Reports</h2>
-                <p>Analyze your spending habits with visual reports.</p>
-                <img src="assets/images/advanced-reports.png" alt="Advanced Reports" class="doc-image">
-                <p class="doc-image-caption">Deep dive into spending trends and category analysis</p>
-
-                <h3>10.1 Free vs Premium Reports</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Report Type</th>
-                            <th>Free Plan</th>
-                            <th>Premium Plan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Income vs Expense</strong></td>
-                            <td>✅ Basic Chart</td>
-                            <td>✅ Detailed Chart</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Spending Trends</strong></td>
-                            <td>❌</td>
-                            <td>✅ <strong>Month-over-Month</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Category Breakdown</strong></td>
-                            <td>❌</td>
-                            <td>✅ <strong>Pie Charts & Drill-down</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Savings Rate</strong></td>
-                            <td>❌</td>
-                            <td>✅ <strong>Track % Saved</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Savings Rate</strong></td>
-                            <td>❌</td>
-                            <td>✅ <strong>Track % Saved</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section id="family" class="doc-section">
-                <h2>11. Family Sharing</h2>
-                <p>Collaborate on budgets with up to 5 family members. Available on both Free and Premium plans!</p>
-                <img src="assets/images/family-settings.png" alt="Family Management" class="doc-image">
-                <p class="doc-image-caption">Manage your family members and roles</p>
-
-                <h3>11.1 Compare Family Plans</h3>
+                <h3>9.1 Physical Goals vs Virtual Goals</h3>
                 <table>
                     <thead>
                         <tr>
                             <th>Feature</th>
-                            <th>Free Family</th>
-                            <th>Premium Family</th>
+                            <th>Physical Goal</th>
+                            <th>Virtual Goal (Envelope)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Family Members</strong></td>
-                            <td>Up to 5</td>
-                            <td>Up to 5</td>
+                            <td><strong>Where Money Lives</strong></td>
+                            <td>Dedicated savings / investment account</td>
+                            <td>Stays inside your checking account</td>
                         </tr>
                         <tr>
-                            <td><strong>Shared Features</strong></td>
-                            <td>✅ Dashboard, Goals</td>
-                            <td>✅ Dashboard, Goals</td>
+                            <td><strong>How to Fund</strong></td>
+                            <td>Make bank transfer & click <strong>"Log Transfer"</strong></td>
+                            <td>Click <strong>"Quick Fund"</strong> (instant mental allocation)</td>
                         </tr>
                         <tr>
-                            <td><strong>Notifications</strong></td>
-                            <td>✅ In-App</td>
-                            <td>✅ In-App</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Recurring Txns</strong></td>
-                            <td>Limited (10)</td>
-                            <td><strong>Unlimited</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Accounts</strong></td>
-                            <td>1 per Person</td>
-                            <td><strong>Unlimited</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Reports</strong></td>
-                            <td>Basic</td>
-                            <td><strong>Full Analytics</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>AI Statement Upload</strong></td>
-                            <td>❌</td>
-                            <td>✅ <strong>30 Uploads / month</strong></td>
+                            <td><strong>Safe to Spend Effect</strong></td>
+                            <td>Deducted as an external transfer</td>
+                            <td>Deducted from available cash buffer</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p>See <a href="getting-started.html#step7">Getting Started</a> for instructions on creating/joining a
-                    family.</p>
-            </section>
-
-            <section id="settings" class="doc-section">
-                <h2>12. Settings</h2>
-                <p>Customize your account and preferences. (Email, Password, Pay Cycle, Subscription).</p>
-            </section>
-
-            <section id="security-vault" class="doc-section">
-                <h2>13. Security & Password Vault</h2>
-                <p>Manage passwords for encrypted bank statements securely.</p>
-
-                <h3>13.1 Why use a Vault?</h3>
-                <p>Many banks password-protect PDF statements. To allow Magic Drop to work while you're away,
-                    the app needs a way to unlock these files. We use a secure vault to store these keys.</p>
-
-                <div class="info-box">
-                    <strong>📍 Logic:</strong>
-                    <ul>
-                        <li><strong>Manual Upload:</strong> If you upload an encrypted PDF, the app looks in your vault.
-                            If no match is found, it will ask you for the password.</li>
-                        <li><strong>Magic Drop:</strong> The app automatically uses vault passwords to "auto-decrypt"
-                            files during the background sync.</li>
-                    </ul>
-                </div>
-
-                <h3>13.2 Privacy & Encryption</h3>
-                <p>Your privacy is our highest priority:</p>
+                <h3>9.2 Automatic Matching Note Syntax</h3>
+                <p>When logging transfers manually, the system matches transactions to goals using the note field:</p>
                 <ul>
-                    <li><strong>At Rest:</strong> Passwords are encrypted in our database using industry-standard
-                        AES-256.</li>
-                    <li><strong>In-Memory:</strong> Passwords are only decrypted for a few milliseconds during the
-                        actual
-                        file processing and are never stored in plain text.</li>
-                    <li><strong>Ownership:</strong> Your passwords are private to your account and are never shared with
-                        other users or family members.</li>
+                    <li>Physical Goal: <code>Transfer for [Goal Name]</code> (e.g. <code>Transfer for Emergency Fund</code>)</li>
+                    <li>Virtual Goal: <code>Allocation to [Goal Name]</code> (e.g. <code>Allocation to Holiday Fund</code>)</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 10: SMART INVESTMENTS -->
+            <section id="investments" class="doc-section">
+                <h2>10. Smart Investments & Portfolio Analytics</h2>
+                <p>Consolidate your Stocks & Shares ISAs, Pensions, and brokerage accounts.</p>
+                <img src="assets/images/smart-investments.png" alt="Smart Investments Portfolio" class="doc-image">
+
+                <h3>10.1 Key Capabilities</h3>
+                <ul>
+                    <li><strong>Statement Snapshot Truth:</strong> Upload investment valuation statements for 100% verified historical snapshots.</li>
+                    <li><strong>Asset Allocation:</strong> Visual breakdown by <strong>Geography</strong> (US, UK, Emerging Markets, Global) and <strong>Sector</strong> (Tech, Healthcare, Financials, etc.).</li>
+                    <li><strong>Pension Performance:</strong> Return calculated accurately from net contributions vs current valuation.</li>
+                    <li><strong>Live Market Pricing:</strong> Auto-updates listed holdings with 3-hour cached market prices.</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 11: SMART MORTGAGES -->
+            <section id="mortgages" class="doc-section">
+                <h2>11. Smart Mortgages & Rate Solver</h2>
+                <p>Track your property equity, Loan-to-Value (LTV), and amortized payment schedules.</p>
+                <img src="assets/images/smart-mortgages.png" alt="Smart Mortgages Screen" class="doc-image">
+
+                <h3>11.1 Features & Rate Solver</h3>
+                <ul>
+                    <li><strong>Payment Linking:</strong> Automatically links mortgage debits ($\ge £100$) from your checking account. Repayments remain normal expenses without distorting Safe to Spend.</li>
+                    <li><strong>Binary Search Rate Solver:</strong> If payment amounts adjust (e.g. lender rate changes), the system reverse-engineers the exact new annual interest rate from <code>(Current Balance, Remaining Term, Monthly Payment)</code> and updates your amortization schedule.</li>
+                    <li><strong>Future Deal Comparisons:</strong> Models projected balances and compares official market deals (e.g. Barclays, HSBC) at the end of your fixed rate period.</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 12: ANDROID MOBILE APP -->
+            <section id="mobile-app" class="doc-section">
+                <h2>12. Android Mobile App</h2>
+                <p>The companion app for instant on-the-go financial tracking.</p>
+                <div class="video-grid" style="grid-template-columns: 1fr 1fr;">
+                    <img src="assets/images/mobile-dashboard.png" alt="Mobile Dashboard" class="doc-image">
+                    <img src="assets/images/mobile-transactions.png" alt="Mobile Transactions" class="doc-image">
+                </div>
+                <p>Learn how to enable Biometrics and Bank Push Capture on our <a href="mobile-app.html">Mobile App Guide</a>.</p>
+            </section>
+
+            <!-- SECTION 13: REPORTS -->
+            <section id="reports" class="doc-section">
+                <h2>13. Reports & Analytics</h2>
+                <p>Analyze income vs expenses, category breakdowns, savings rates, and transaction histories across customized date ranges with instant CSV export.</p>
+                <img src="assets/images/advanced-reports.png" alt="Reports and Analytics" class="doc-image">
+            </section>
+
+            <!-- SECTION 14: FAMILY SHARING -->
+            <section id="family" class="doc-section">
+                <h2>14. Family Sharing & Collaboration</h2>
+                <p>Collaborate with up to 5 family members on a single plan.</p>
+                <img src="assets/images/family-settings.png" alt="Family Settings" class="doc-image">
+                <ul>
+                    <li><strong>Financial Transparency:</strong> All members share visibility of household accounts and goals.</li>
+                    <li><strong>Individual Filter:</strong> View personal spending vs total family cash flow with a single click.</li>
+                    <li><strong>Secure Invitations:</strong> Invite via direct email link or a 6-character join code.</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 15: SECURITY & VAULT -->
+            <section id="security-vault" class="doc-section">
+                <h2>15. Security & Statement Password Vault</h2>
+                <p>Manage encrypted passwords for password-protected bank statements.</p>
+                <ul>
+                    <li><strong>AES-256 Encryption:</strong> Statement passwords stored in the Vault are encrypted at rest using industry-standard AES-256.</li>
+                    <li><strong>In-Memory Decryption:</strong> Keys are decrypted only for the millisecond duration of PDF parsing and are never stored in plain text.</li>
+                    <li><strong>Zero Bank Credential Access:</strong> We never ask for or store your online banking credentials.</li>
                 </ul>
             </section>
 
             <div class="help-box">
-                <h3>Need More Help?</h3>
-                <p>Check our <a href="faq.html">FAQ</a> or email <a
-                        href="mailto:support@getdigraw.com">support@getdigraw.com</a></p>
+                <h3>Have Questions?</h3>
+                <p>Check our <a href="faq.html">FAQ</a> or email <a href="mailto:support@getdigraw.com">support@getdigraw.com</a>.</p>
             </div>
         </main>
     </div>
