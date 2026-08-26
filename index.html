@@ -35,18 +35,26 @@
     <header class="hero">
         <div class="container">
             <h1 class="hero-title">Family Budget Tracker</h1>
-            <p class="hero-subtitle">Intelligent, Goal-First Financial Management for Modern Families</p>
+            <p class="hero-subtitle">Unified Cross-Platform Financial Management for Modern Families</p>
             <p style="max-width: 800px; margin: 0 auto 1.5rem auto; color: var(--text-light, #4a5568); font-size: 1.15rem; line-height: 1.6;">
-                Calculate your exact <strong>Safe to Spend</strong> cash flow, auto-extract bank statements with vision AI, track investments and mortgages, and manage your budget together across <strong>Modern Web</strong> and <strong>Native Android Mobile</strong>.
+                Calculate your exact <strong>Safe to Spend</strong> cash flow, auto-extract bank statements with vision AI, track investments and mortgages, and manage your budget together across <strong>React Web Desktop</strong> and <strong>Native Android Mobile</strong>.
             </p>
-            <div class="hero-image-container"
-                style="margin: 2rem auto; width: 100%; max-width: 1050px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); border-radius: 12px; overflow: hidden; border: 1px solid var(--border, #e2e8f0);">
-                <img src="assets/images/dashboard-overview.png" alt="Modern Family Budget Tracker Dashboard"
-                    style="width: 100%; height: auto; display: block;">
+            
+            <!-- Side-by-Side Hero Preview -->
+            <div class="showcase-grid" style="max-width: 1050px; margin: 2rem auto; text-align: left;">
+                <div class="showcase-col">
+                    <div class="showcase-label">💻 React Web Desktop</div>
+                    <img src="assets/web_media/01_dashboard.png" alt="React Web Dashboard" class="showcase-img-web">
+                </div>
+                <div class="showcase-col">
+                    <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                    <img src="assets/mobile_media/01_dashboard.gif" alt="Native Mobile Dashboard Flow" class="showcase-img-mobile">
+                </div>
             </div>
+
             <div class="hero-buttons">
-                <a href="getting-started.html" class="btn btn-large btn-primary">Get Started</a>
-                <a href="user-manual.html" class="btn btn-large btn-secondary">Read Documentation</a>
+                <a href="user-manual.html" class="btn btn-large btn-primary">📖 Explore Side-by-Side User Manual</a>
+                <a href="getting-started.html" class="btn btn-large btn-secondary">Get Started</a>
                 <a href="mobile-app.html" class="btn btn-large btn-outline">📱 Android App</a>
             </div>
         </div>
@@ -54,123 +62,91 @@
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Core Platform Highlights</h2>
+            <h2 class="section-title">Core Platform Highlights (14 Modules)</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Safe to Spend & Live Math</h3>
-                    <p>Real-time cash flow calculated against your custom pay cycle. Drill down into the <strong>Live Math</strong> popup to see how every bill, goal, and expense is counted.</p>
-                    <a href="user-manual.html#dashboard">Learn more →</a>
+                    <p>Real-time cash flow calculated against your salary pay cycle with instant "Live Math" arithmetic breakdowns.</p>
+                    <a href="user-manual.html#dashboard">View side-by-side guide →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Transactions & Search</h3>
+                    <p>Fast virtualized ledger with multi-category pills, merchant auto-cleaning, and bulk overrides.</p>
+                    <a href="user-manual.html#transactions">View side-by-side guide →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏦</div>
+                    <h3>Multi-Account Hub</h3>
+                    <p>Unified tracking for Checking, Credit, Mortgages, and ISAs with multi-currency balance isolation.</p>
+                    <a href="user-manual.html#accounts">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>Android Mobile App</h3>
-                    <p>Native Android app with <strong>Biometric App Lock</strong>, real-time <strong>Bank Push Notification capture</strong>, interactive Skia charts, and hands-free voice logging.</p>
+                    <h3>Native Android Mobile App</h3>
+                    <p>On-device bank push notification capture, biometric lock, and interactive 60fps Skia charts.</p>
                     <a href="mobile-app.html">Explore Mobile App →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
-                    <h3>Vision-First AI Statement Upload</h3>
-                    <p>Extract transactions with 95%+ accuracy using Google Gemini OCR. Automatically splits <strong>multi-account PDF statements</strong> and verifies mathematical balance closure.</p>
-                    <a href="user-manual.html#ai-upload">Learn more →</a>
+                    <h3>Vision AI Statement Upload</h3>
+                    <p>Universal multi-account PDF extraction with 98%+ confidence and automated mathematical balance reconciliation.</p>
+                    <a href="user-manual.html#ai-upload">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
-                    <h3>Magic Drop & Gmail Ingestion</h3>
-                    <p>Trigger an <strong>Invisible Sync</strong> by dropping statements into a Google Drive folder or applying a Gmail label. Syncs automatically every 60 seconds.</p>
+                    <h3>Magic Drop & Gmail Sync</h3>
+                    <p>Zero-login automated statement processing via Google Drive folders and Gmail triggers.</p>
                     <a href="magic-drop-guide.html">View Setup Guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🏡</div>
                     <h3>Smart Mortgages & Rate Solver</h3>
-                    <p>Track property valuation, Loan-to-Value (LTV), and linked bank repayments. Reverse-engineers interest rates via dynamic amortization and compares official market deals.</p>
-                    <a href="user-manual.html#mortgages">Learn more →</a>
+                    <p>Dynamic amortization loan curves, statement activity payment ledger, and binary search interest rate solver.</p>
+                    <a href="user-manual.html#mortgages">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📈</div>
-                    <h3>Smart Investments & Portfolio</h3>
-                    <p>Consolidate ISAs, Pensions, and brokerage accounts. Track Geography/Sector allocation, pension returns, and live price updates.</p>
-                    <a href="user-manual.html#investments">Learn more →</a>
+                    <h3>Smart Investments Portfolio</h3>
+                    <p>Consolidate ISAs, SIPPs, and GIAs across Vanguard and AJ Bell with live ticker sync and asset allocation insights.</p>
+                    <a href="user-manual.html#investments">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Savings Goals & Virtual Vault</h3>
-                    <p>Create <strong>Physical Goals</strong> for dedicated savings accounts or <strong>Virtual Goals</strong> for mental allocations in checking. Pin progress bars to your dashboard.</p>
-                    <a href="user-manual.html#savings-goals">Learn more →</a>
+                    <h3>Physical vs Virtual Goals</h3>
+                    <p>Link physical goals to dedicated bank balances while budgeting virtual envelopes in checking.</p>
+                    <a href="user-manual.html#goals">View side-by-side guide →</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Recurring Bills & Predictions</h3>
+                    <p>Auto-deduct upcoming bills within the active pay cycle with predictive transaction matching.</p>
+                    <a href="user-manual.html#recurring">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>5+1 Pay Cycle Spending Trends</h3>
-                    <p>Compare your last 5 completed cycles with your active cycle. Analyze the <strong>Wealth Gap</strong> and <strong>Safety Net</strong> accumulation over time.</p>
-                    <a href="user-manual.html#spending-trends">Learn more →</a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎙️</div>
-                    <h3>Voice Commands & Smart Cache</h3>
-                    <p>Log transactions or filter your ledger hands-free with voice. Our <strong>Global Merchant Cache</strong> and <strong>Bulk Overrides</strong> learn your preferences forever.</p>
-                    <a href="user-manual.html#transactions">Learn more →</a>
+                    <h3>Reports & Cash Flow Trends</h3>
+                    <p>Analyze income vs expenses, category distributions, and month-over-month savings velocity.</p>
+                    <a href="user-manual.html#reports">View side-by-side guide →</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Family Sharing</h3>
-                    <p>Invite up to 5 family members with 100% financial transparency. View combined family finances or filter by individual members in one click.</p>
-                    <a href="user-manual.html#family">Learn more →</a>
+                    <h3>Family Collaboration</h3>
+                    <p>Invite up to 5 family members with Owner and Member roles and instant member switching.</p>
+                    <a href="user-manual.html#family">View side-by-side guide →</a>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Bank-Level Security & Vault</h3>
-                    <p>AES-256 encrypted statement password vault, isolated Jailed Bot cloud permissions, and zero credential storage. Your financial data is private and never sold.</p>
-                    <a href="user-manual.html#security-vault">Learn more →</a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
-                    <h3>True Multi-Currency Support</h3>
-                    <p>Track accounts in GBP (£), USD ($), EUR (€), INR (₹), and more simultaneously without forced foreign exchange distortion.</p>
-                    <a href="faq.html#features">Learn more →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="quick-links">
-        <div class="container">
-            <h2 class="section-title">Documentation Quick Links</h2>
-            <div class="link-grid">
-                <a href="getting-started.html" class="link-card">
-                    <h3>🚀 Getting Started</h3>
-                    <p>New user? Follow our 7-step quick setup guide</p>
-                </a>
-                <a href="user-manual.html" class="link-card">
-                    <h3>📖 Complete User Manual</h3>
-                    <p>Step-by-step documentation of all web & mobile features</p>
-                </a>
-                <a href="mobile-app.html" class="link-card">
-                    <h3>📱 Android Mobile App</h3>
-                    <p>Guide to Biometrics, Push Bank Ingestion, and Skia charts</p>
-                </a>
-                <a href="magic-drop-guide.html" class="link-card">
-                    <h3>✨ Magic Drop & Gmail Sync</h3>
-                    <p>Zero-code setup for automated statement processing</p>
-                </a>
-                <a href="faq.html" class="link-card">
-                    <h3>❓ FAQ</h3>
-                    <p>Pricing, security, OCR guarantees, and accounting rules</p>
-                </a>
-                <a href="videos.html" class="link-card">
-                    <h3>🎬 Video Walkthroughs</h3>
-                    <p>Watch short video tutorials mastering key features</p>
-                </a>
             </div>
         </div>
     </section>
@@ -179,9 +155,10 @@
         <div class="container">
             <p>&copy; 2026 Family Budget Tracker. All rights reserved.</p>
             <div class="footer-links">
-                <a href="https://family-budget.getdigraw.com/support/privacy">Privacy Policy</a>
-                <a href="https://family-budget.getdigraw.com/support/terms">Terms of Service</a>
-                <a href="mailto:support@getdigraw.com">Contact Support</a>
+                <a href="user-manual.html">User Manual</a>
+                <a href="mobile-app.html">Mobile App</a>
+                <a href="magic-drop-guide.html">Magic Drop</a>
+                <a href="https://family-budget.getdigraw.com">Try App</a>
             </div>
         </div>
     </footer>
