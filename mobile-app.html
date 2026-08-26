@@ -154,12 +154,46 @@
 
             <section id="voice-mobile" class="doc-section">
                 <h2>5. Hands-Free Voice Commands</h2>
-                <p>Tap the floating microphone on any mobile screen to dictate transactions:</p>
+                <p>Family Budget Tracker features a fast, deterministic voice command engine on both Web and Mobile. Tap the floating microphone button on the Transactions screen to speak natural commands.</p>
+
+                <div class="info-box" style="margin: 1rem 0;">
+                    <strong>🎙️ Single-Shot Listening & 3 Action Verbs:</strong><br>
+                    Every voice command <strong>must start with exactly one action verb: <code>Add</code>, <code>Remove</code>, or <code>Filter</code></strong>. The microphone captures speech, displays a live transcript under <em>"What I heard"</em>, and automatically submits your command approximately 2.5 seconds after you pause speaking.
+                </div>
+
+                <h3>1. ➕ Add Commands (Expense & Income Creation)</h3>
+                <p>Speak an amount, currency, and merchant or description. The deterministic parser resolves details against your accounts and transaction history:</p>
                 <ul>
-                    <li><em>"Paid £45 for petrol on Barclaycard"</em></li>
-                    <li><em>"Received £250 freelance payment in Chase"</em></li>
-                    <li><em>"Quick fund £50 to Holiday goal"</em></li>
+                    <li><code>Add £20 Costa Coffee</code> <em>(Short form: auto-detects today's date, your primary checking account, and categorizes as Dining Out / Coffee from merchant history)</em></li>
+                    <li><code>Add £60 grocery Sainsburys to Barclays debit on 27 July</code> <em>(Full form: explicitly sets category, merchant, account, and date)</em></li>
+                    <li><code>Add £250 freelance payment to Chase</code> <em>(Recognizes income terms like salary, refund, payment, or credit to set type to Income)</em></li>
                 </ul>
+                <p><strong>What Happens on Add:</strong> The app opens the <strong>Add Transaction Modal</strong> with the fields pre-populated for visual review (Date, Amount, Account, Category, Description). You can verify or tweak any values before tapping <em>"Add Transaction"</em> to save. Voice commands <strong>never</strong> write transactions silently in the background.</p>
+
+                <h3>2. 🗑️ Remove Commands (Single vs Multiple Matches)</h3>
+                <p>To target a transaction for removal, voice commands require an <strong>exact amount with currency</strong> plus either a <strong>date</strong> or <strong>merchant description</strong>:</p>
+                <ul>
+                    <li><code>Remove £1 Counter Credit</code></li>
+                    <li><code>Remove £81.50 Sainsbury on 20 August</code></li>
+                    <li><code>Remove £40 Sainsburys on 27 July</code></li>
+                </ul>
+                <p><strong>What Happens on Remove:</strong></p>
+                <ul>
+                    <li><strong>Single Match Found:</strong> Closes the voice panel and immediately opens the transaction preview modal for that exact record. To delete, you must tap the trash icon and confirm the delete prompt.</li>
+                    <li><strong>Multiple Transactions Match (Disambiguation Flow):</strong> If multiple transactions share the same amount and criteria (for example, two £1 counter credits or duplicate coffee purchases), the system opens a <strong>"Choose transaction (N matches)"</strong> dialog. Each matching card shows the date, merchant, exact amount, and account name. Tapping a card opens its preview modal for manual review.</li>
+                    <li><strong>Safety Rule:</strong> Voice interpretation <strong>never deletes a transaction automatically</strong>. Destructive deletion strictly requires manual confirmation.</li>
+                </ul>
+
+                <h3>3. 🔍 Filter Commands (Multi-Dimension Ledger Search)</h3>
+                <p>Dynamically filter and sort the transaction feed without leaving your view or clicking multiple dropdowns:</p>
+                <ul>
+                    <li><code>Filter today's transactions</code> <em>(Filters by today's date)</em></li>
+                    <li><code>Filter source notification</code> <em>(Filters transactions captured via real-time bank push notifications)</em></li>
+                    <li><code>Filter description Vanguard</code> <em>(Searches descriptions and merchant names)</em></li>
+                    <li><code>Filter description Sainsbury category groceries account Barclays debit July £50</code> <em>(Combines account, category, merchant, date range, and minimum amount with AND semantics)</em></li>
+                    <li><code>Filter all</code> <em>(Resets all active filters to view the full ledger)</em></li>
+                </ul>
+                <p><strong>What Happens on Filter:</strong> The ledger instantly updates with the parsed filters applied across your accounts, categories, sources, and dates. The app automatically scrolls to the first matching transaction in your feed, and displays a 1-tap <strong>"Clear voice filters"</strong> button to restore the default view.</p>
             </section>
 
             <section id="updates" class="doc-section">

@@ -127,6 +127,19 @@
                     <li>Select a family member filter to isolate individual spending.</li>
                     <li>Click/tap any row to modify category, split costs, or attach notes.</li>
                 </ol>
+
+                <h3>🎙️ Voice Commands & Accessibility (Add, Remove, Filter)</h3>
+                <p>Both Desktop Web and Native Mobile provide deterministic voice transaction actions. Tap the <strong>Voice</strong> microphone button on the transactions screen to speak:</p>
+                <ul>
+                    <li><strong><code>Add</code> Commands (e.g. <code>Add £20 Costa Coffee</code> or <code>Add £60 grocery Sainsburys to Barclays debit on 27 July</code>):</strong> Automatically infers today's date, your primary checking account, and categorizes via merchant learning. Pre-populates the Add modal for visual review before saving.</li>
+                    <li><strong><code>Remove</code> Commands (e.g. <code>Remove £1 Counter Credit</code> or <code>Remove £81.50 Sainsbury on 20 August</code>):</strong> Requires exact amount/currency and date or merchant.
+                        <ul>
+                            <li><strong>Single Match:</strong> Instantly opens the transaction modal for confirmation.</li>
+                            <li><strong>Multiple Matches:</strong> Displays a <em>"Choose transaction (N matches)"</em> disambiguation dialog showing dates, accounts, and amounts so you can pick the exact one. Voice never deletes automatically without confirmation.</li>
+                        </ul>
+                    </li>
+                    <li><strong><code>Filter</code> Commands (e.g. <code>Filter today's transactions</code>, <code>Filter source notification</code>, <code>Filter description Sainsbury category groceries July £50</code>):</strong> Instantly applies multi-dimensional filters directly to the live transaction ledger and scrolls to the first matching row, with a 1-tap <em>"Clear voice filters"</em> button.</li>
+                </ul>
             </section>
 
             <!-- 3. ACCOUNTS -->
