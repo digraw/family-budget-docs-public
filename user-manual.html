@@ -187,7 +187,7 @@
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Web renders responsive SVG charts while Mobile uses GPU-accelerated React Native Skia. Aggregations calculate on the fly across selected date intervals without UI lag.</p>
+                <p>Web renders responsive SVG charts while Mobile delivers hardware-accelerated interactive charts. Aggregations calculate on the fly across selected date intervals without UI lag.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
@@ -214,18 +214,20 @@
 
                 <h3>What It Does</h3>
                 <ul>
-                    <li>Native fingerprint / Face ID biometric app lock.</li>
-                    <li>Android Notification Listener package whitelisting.</li>
+                    <li>Native fingerprint / Face ID biometric app lock enforced on launch and resume.</li>
+                    <li><strong>Real-Time Bank Sync:</strong> Instant transaction ingestion from bank push notifications and Google Wallet.</li>
+                    <li><strong>Listener Transparency:</strong> Zero-server-logging privacy architecture with on-device allowlisting and live audit trail.</li>
                     <li>Pay cycle frequency configuration, currency selector, and audit export.</li>
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Uses <code>expo-local-authentication</code> to secure the app both on launch and foreground resume. Package managers sync native versions directly from the OS.</p>
+                <p>Uses <code>expo-local-authentication</code> for biometrics and a native Android <code>NotificationListenerService</code>. Notification text is parsed 100% in local memory and never transmitted to server logs or remote databases.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
                     <li>Toggle <strong>"Biometric Lock"</strong> on mobile to require fingerprint/face scan.</li>
-                    <li>Tap <strong>"Notification Access"</strong> to grant on-device bank transaction capture permissions.</li>
+                    <li>Under <strong>Connected Services & Alerts</strong>, toggle <strong>"Real-time bank sync"</strong> and grant notification access.</li>
+                    <li>Expand <strong>"Listener transparency"</strong> to inspect active package allowlists, audit the last captured alert, or add custom bank package IDs (e.g. <code>com.yourbank.app</code>).</li>
                 </ol>
             </section>
 
@@ -282,7 +284,7 @@
                 <h3>What It Does</h3>
                 <ul>
                     <li><strong>Holdings Tab:</strong> Individual funds, shares, unit costs, and current market values.</li>
-                    <li><strong>Performance Tab:</strong> Skia quarterly portfolio valuation growth curve.</li>
+                    <li><strong>Performance Tab:</strong> Interactive quarterly portfolio valuation growth curve.</li>
                     <li><strong>Insights Tab:</strong> Asset class distribution (Equities, Bonds, Cash) and geographic exposure.</li>
                 </ul>
 

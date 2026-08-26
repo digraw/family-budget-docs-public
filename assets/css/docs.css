@@ -12,12 +12,14 @@
 /* Sidebar */
 .sidebar {
     position: sticky;
-    top: 100px;
-    height: fit-content;
-    background: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--border);
+    top: 90px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: transparent;
+    padding: 1rem 1.5rem 1.5rem 0;
+    border: none;
+    border-right: 1px solid var(--border);
+    border-radius: 0;
 }
 
 .sidebar h3 {
@@ -332,6 +334,10 @@ tr:hover {
 
     .sidebar {
         position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
         margin-bottom: 2rem;
     }
 

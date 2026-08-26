@@ -12,7 +12,7 @@ This repository contains the complete public documentation for **Family Budget T
 - **`index.html`** - Documentation landing page with feature highlights and screenshots.
 - **`getting-started.html`** - 7-step onboarding quickstart guide for new users.
 - **`user-manual.html`** - Comprehensive 15-section feature manual (Safe to Spend Live Math, Investments, Mortgages, Voice commands, etc.).
-- **`mobile-app.html`** - Dedicated Android companion app guide (Biometrics, Bank Push Ingestion, Skia charts).
+- **`mobile-app.html`** - Dedicated Android companion app guide (Biometrics, Bank Push Ingestion, Interactive charts).
 - **`magic-drop-guide.html`** - Setup guide for Google Drive Jailed Bot sync and Gmail Zero-Code Apps Script ingestion.
 - **`faq.html`** - Frequently asked questions on pricing, security, OCR guarantees, and accounting rules.
 - **`videos.html`** - Embedded video tutorial walkthroughs.

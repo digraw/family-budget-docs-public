@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Android Mobile App Guide for Family Budget Tracker - Biometrics, Push Bank Ingestion, Skia Charts, and Voice Commands">
+        content="Android Mobile App Guide for Family Budget Tracker - Biometrics, Push Bank Ingestion, Interactive Charts, and Voice Commands">
     <title>Android Mobile App - Family Budget Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/docs.css">
@@ -38,8 +38,8 @@
             <ul>
                 <li><a href="#download">1. Download & Install</a></li>
                 <li><a href="#biometrics">2. Biometric Security</a></li>
-                <li><a href="#push-ingestion">3. Bank Push Capture</a></li>
-                <li><a href="#skia-charts">4. Interactive Skia Charts</a></li>
+                <li><a href="#bank-sync-transparency">3. Real-Time Bank Sync & Listener Transparency</a></li>
+                <li><a href="#interactive-charts">4. Interactive Charts</a></li>
                 <li><a href="#voice-mobile">5. Voice Commands</a></li>
                 <li><a href="#updates">6. In-App Updates</a></li>
             </ul>
@@ -47,9 +47,9 @@
 
         <main class="docs-content">
             <h1>📱 Native Android Mobile App</h1>
-            <p class="lead">The native Android companion app for Family Budget Tracker puts real-time budgeting in your pocket with biometric security, instant push notification transaction ingestion, and high-performance interactive Skia charts.</p>
+            <p class="lead">The native Android companion app for Family Budget Tracker puts real-time budgeting in your pocket with biometric security, instant push notification transaction ingestion, and high-performance interactive charts.</p>
 
-            <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div class="showcase-col">
                     <div class="showcase-label">Safe to Spend Flow</div>
                     <img src="assets/mobile_media/01_dashboard.gif" alt="Mobile Dashboard Flow" class="showcase-img-mobile">
@@ -57,6 +57,10 @@
                 <div class="showcase-col">
                     <div class="showcase-label">Transactions Feed</div>
                     <img src="assets/mobile_media/02_transactions.gif" alt="Mobile Transactions Flow" class="showcase-img-mobile">
+                </div>
+                <div class="showcase-col">
+                    <div class="showcase-label">Real-Time Bank Sync</div>
+                    <img src="assets/mobile_media/05_settings.gif" alt="Mobile Bank Sync & Transparency" class="showcase-img-mobile">
                 </div>
                 <div class="showcase-col">
                     <div class="showcase-label">Mortgage Curve</div>
@@ -91,26 +95,55 @@
                 </ol>
             </section>
 
-            <section id="push-ingestion" class="doc-section">
-                <h2>3. Real-Time Bank Push Notification Ingestion</h2>
-                <p>Never manually type a coffee or grocery receipt again. The mobile app can capture transaction push notifications sent by your banking apps in real time.</p>
+            <section id="bank-sync-transparency" class="doc-section">
+                <h2>3. Real-Time Bank Sync & Listener Transparency</h2>
+                <p>Never manually type a coffee or grocery receipt again. Family Budget Tracker pairs on-device real-time bank push notifications with an unprecedented <strong>Listener Transparency</strong> privacy architecture.</p>
 
-                <div class="info-box">
-                    <strong>🔒 Hybrid Privacy Filter:</strong><br>
-                    The on-device listener checks notifications against whitelisted banking package IDs (e.g. Barclays, Monzo, Revolut, Google Wallet) OR matches currency symbols (`£`, `$`, `€`, `₹`) + financial verbs (*spent*, *paid*, *debited*) with your active account names. All personal messages (WhatsApp, SMS, cameras) are strictly ignored on-device.
+                <div class="showcase-grid" style="grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; margin: 1.5rem 0;">
+                    <div class="showcase-col">
+                        <div class="showcase-label">Mobile Settings & Listener Controls</div>
+                        <img src="assets/mobile_media/05_settings.gif" alt="Real-Time Bank Sync and Listener Transparency" class="showcase-img-mobile">
+                    </div>
+                    <div>
+                        <h3>⚡ Real-Time Bank Sync</h3>
+                        <p>Whenever you tap your contactless card, make a purchase with Google Wallet, or receive a direct debit, your banking app sends an Android notification. Family Budget Tracker instantly:</p>
+                        <ul>
+                            <li><strong>Captures the alert:</strong> Extracts the spend amount, currency symbol (<code>£</code>, <code>$</code>, <code>€</code>), and merchant name.</li>
+                            <li><strong>Auto-Categorizes:</strong> Assigns the appropriate category (e.g. Groceries, Transport, Utilities) using smart merchant matching.</li>
+                            <li><strong>Updates Safe to Spend:</strong> Immediately recomputes your remaining spendable balance for the pay cycle with zero manual interaction.</li>
+                            <li><strong>Live Mapping Status:</strong> Settings shows real-time health (e.g. <code>Active · 12 app mappings loaded</code>).</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <h3>How to Enable:</h3>
+                <h3>🔎 Listener Transparency: Zero-Cloud Privacy Guarantee</h3>
+                <p>Most budgeting apps that read notifications hide what they do with your data. Family Budget Tracker provides full <strong>Listener Transparency</strong> accessible directly in <strong>Settings → Connected Services & Alerts → Listener transparency</strong>:</p>
+
+                <div class="info-box" style="margin: 1rem 0;">
+                    <strong>🔒 Zero Server Logging Guarantee:</strong><br>
+                    Only explicitly allowlisted Android bank packages are inspected. Notification text is processed entirely in memory on your physical Android device and is <strong>never written to server logs or remote databases</strong>.
+                </div>
+
+                <ul>
+                    <li><strong>Strict App Allowlist:</strong> Only known banking packages (Monzo, Barclays, Revolut, Chase, Starling, Google Wallet, etc.) are processed. All personal messages (WhatsApp, SMS, Signal, Email, Photos) are completely ignored and discarded by the OS service.</li>
+                    <li><strong>Custom Package Management:</strong> Easily add any banking app package ID (e.g. <code>com.yourbank.app</code>) with the built-in <strong>+ Add</strong> input field to expand coverage to niche or international banks.</li>
+                    <li><strong>Live Audit Line:</strong> The transparency panel displays the exact app package and timestamp of the last captured notification (e.g. <code>com.monzo.app · 26/08/2026, 14:32:10</code>) so you can audit operations in real time.</li>
+                    <li><strong>On-Device Pending Review Queue:</strong> If a bank alert mentions an unmapped card or needs account disambiguation, it is quarantined in a local <em>"Needs account selection"</em> panel stored only on your device until you explicitly accept or reject it.</li>
+                    <li><strong>Sensitive Alert Access Status:</strong> Direct indicator revealing whether Android OS permissions allow unredacted sensitive alerts or if companion mode is active.</li>
+                </ul>
+
+                <h3>How to Enable & Configure:</h3>
                 <ol>
-                    <li>Go to <strong>Settings → Notification Listener</strong> in the mobile app.</li>
-                    <li>Tap <strong>"Grant Notification Access"</strong> to open Android system settings and toggle permission on for Family Budget Tracker.</li>
-                    <li>Whenever you tap your card or pay with Google Wallet, the app captures the alert, parses the amount and merchant, categorizes it, and adds it to your ledger with zero delay.</li>
+                    <li>In the mobile app, tap <strong>Settings</strong> in the bottom navigation bar.</li>
+                    <li>Scroll to <strong>Connected Services & Alerts → Real-time bank sync</strong> and toggle it on.</li>
+                    <li>Android will open <strong>Device Notification Access</strong>; toggle access for <strong>Family Budget Tracker</strong>.</li>
+                    <li>Expand <strong>"Listener transparency"</strong> to verify active package mappings or add custom bank app package names.</li>
                 </ol>
             </section>
 
-            <section id="skia-charts" class="doc-section">
-                <h2>4. Interactive Skia Charts</h2>
-                <p>Built with Shopify React Native Skia for 60fps hardware-accelerated fluid touch interactions:</p>
+            <section id="interactive-charts" class="doc-section">
+                <h2>4. Interactive Charts</h2>
+                <p>High-performance interactive financial charts designed for 60fps fluid touch interactions:</p>
                 <ul>
                     <li><strong>Cash Flow Sparklines:</strong> Real-time mini sparklines in the dashboard header.</li>
                     <li><strong>Radial Category Donut:</strong> Smooth touch-enabled category breakdowns.</li>
