@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Complete User Manual for Family Budget Tracker - Step-by-step guide for Web and Android Mobile features">
+        content="Complete User Manual for Family Budget Tracker - Unified side-by-side guide for React Web and Native Android Mobile features">
     <title>User Manual - Family Budget Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/docs.css">
@@ -34,303 +34,488 @@
 
     <div class="docs-container">
         <aside class="sidebar">
-            <h3>Table of Contents</h3>
+            <h3>User Manual</h3>
             <ul>
-                <li><a href="#dashboard">1. Dashboard & Live Math</a></li>
-                <li><a href="#notifications">2. Notifications Center</a></li>
+                <li><a href="#dashboard">1. Dashboard & Safe to Spend</a></li>
+                <li><a href="#transactions">2. Transactions Ledger</a></li>
                 <li><a href="#accounts">3. Accounts Management</a></li>
-                <li><a href="#transactions">4. Transactions & Voice</a></li>
-                <li><a href="#ai-upload">5. AI Statement Upload</a></li>
-                <li><a href="#magic-drop">6. Magic Drop & Gmail</a></li>
-                <li><a href="#spending-trends">7. Spending Trends</a></li>
-                <li><a href="#budget-limits">8. Budget Limits</a></li>
-                <li><a href="#savings-goals">9. Savings Goals</a></li>
-                <li><a href="#investments">10. Smart Investments</a></li>
-                <li><a href="#mortgages">11. Smart Mortgages</a></li>
-                <li><a href="#mobile-app">12. Android Mobile App</a></li>
-                <li><a href="#reports">13. Reports & Analytics</a></li>
-                <li><a href="#family">14. Family Sharing</a></li>
-                <li><a href="#security-vault">15. Security & Vault</a></li>
+                <li><a href="#reports">4. Reports & Cash Flow</a></li>
+                <li><a href="#settings">5. Settings & Biometrics</a></li>
+                <li><a href="#mortgages">6. Mortgage Hub & Rate Solver</a></li>
+                <li><a href="#investments">7. Investment Portfolio</a></li>
+                <li><a href="#goals">8. Savings Goals</a></li>
+                <li><a href="#budget-limits">9. Budget Limits</a></li>
+                <li><a href="#recurring">10. Recurring Subscriptions</a></li>
+                <li><a href="#ai-upload">11. AI Statement Vault</a></li>
+                <li><a href="#import-data">12. Data Import (CSV & YNAB)</a></li>
+                <li><a href="#family">13. Family Collaboration</a></li>
+                <li><a href="#notifications">14. In-App Notifications</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
             <h1>📖 Complete User Manual</h1>
-            <p class="lead">Detailed documentation for all features across the Modern React Web App and the Native Android Mobile App.</p>
+            <p class="lead">Unified documentation covering all 14 core modules across the <strong>React Web Application</strong> and the <strong>Native Android Mobile Companion App</strong> with live demo data from the Smith family (Sarah, John, and Tom).</p>
 
-            <!-- SECTION 1: DASHBOARD -->
+            <!-- 1. DASHBOARD -->
             <section id="dashboard" class="doc-section">
-                <h2>1. Dashboard & "Safe to Spend" Live Math</h2>
-                <p>Your central command hub displays real-time cash flow, actionable AI insights, and pinned savings goals for the active pay cycle.</p>
-                <img src="assets/images/dashboard-overview.png" alt="Dashboard Overview" class="doc-image">
-                <p class="doc-image-caption">The main dashboard showing Safe to Spend, AI insights, and pinned goals.</p>
+                <h2>1. Financial Dashboard & "Safe to Spend"</h2>
+                <p>Your household command center displaying live spendable liquidity, income burn velocity, connected accounts, and category metrics.</p>
 
-                <h3>1.1 Understanding "Safe to Spend"</h3>
-                <p>Traditional apps only display account balances, leading to accidental overspending when future bills or savings are forgotten. <strong>Safe to Spend</strong> calculates the exact discretionary money you can spend today without running short before your next payday:</p>
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/01_dashboard.png" alt="Web Dashboard" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/01_dashboard.gif" alt="Mobile Dashboard Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Displays the central <strong>Safe to Spend (S2S)</strong> gauge showing exactly how much discretionary money you can spend before your next salary.</li>
+                    <li>Quick-stat overview cards: Liquid Cash Balance, Inflow Income, Expense Burn, and Allocated Savings.</li>
+                    <li>Instant family filter chip (<code>👥 All</code>, <code>👤 Sarah</code>, <code>👤 John</code>) to toggle between household and individual views without layout shifts.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
                 <div class="info-box">
-                    <strong>Safe to Spend Formula:</strong><br>
-                    <code>Safe to Spend = Total Income − Total Expenses − Physical Goals − Virtual Goals − Scheduled Bills</code>
+                    <strong>Dynamic Pay Cycle Formula:</strong><br>
+                    <code>Safe to Spend = Liquid Cash Balance − Committed Bills − Active Budget Limits − Physical Goal Reserves</code>
                 </div>
+                <p>Budgets align to your actual salary dates rather than calendar months. Tapping "Live Math" breaks down the exact arithmetic and contributing accounts.</p>
 
-                <h3>1.2 The Live Math Breakdown</h3>
-                <p>Click on the <strong>"Live Math"</strong> button on the Safe to Spend card to open an interactive modal explaining every component of your calculation:</p>
-                <ul>
-                    <li><strong>Income Received:</strong> All salary, deposits, and income credited during this pay cycle.</li>
-                    <li><strong>Discretionary Expenses:</strong> Total debit transactions excluding internal transfers and refunds.</li>
-                    <li><strong>Physical Goals Funded:</strong> Money transferred to external savings/brokerage accounts.</li>
-                    <li><strong>Virtual Goals Allocated:</strong> Mental envelope reserves earmarked inside your checking account.</li>
-                    <li><strong>Upcoming Recurring Bills:</strong> Scheduled bills due before your pay cycle resets.</li>
-                </ul>
-
-                <h3>1.3 Daily AI Financial Coach Insights</h3>
-                <p>Premium subscribers receive automated AI insights refreshed every 24 hours. The coach identifies unusual merchant spikes, suggests savings opportunities, and alerts you to budget pace trends.</p>
-
-                <h3>1.4 Family Member Filter</h3>
-                <p>Toggle between <strong>"All Family"</strong> (combined household cash flow) or select any individual member to inspect their personal spending and account breakdown.</p>
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Go to <strong>Settings → Pay Cycle Settings</strong> to set your salary schedule (Monthly, Bi-weekly, or Specific Day).</li>
+                    <li>Click or tap the <strong>Family Filter Chip</strong> to switch between personal and combined household totals.</li>
+                    <li>Use the <strong>Next / Prev</strong> buttons in the header to inspect previous or projected future cycles.</li>
+                </ol>
             </section>
 
-            <!-- SECTION 2: NOTIFICATIONS -->
-            <section id="notifications" class="doc-section">
-                <h2>2. Notifications Center</h2>
-                <p>Stay informed with non-intrusive, functional alerts available across both Web and Mobile.</p>
-                <img src="assets/images/notifications-list.png" alt="Notifications Center" class="doc-image">
-                <p class="doc-image-caption">Notification log with audit trail and direct action links.</p>
-
-                <h3>2.1 Trigger Events</h3>
-                <ul>
-                    <li><strong>Budget Limit Warnings:</strong> Alerts triggered when you hit <strong>90%</strong> or exceed <strong>100%</strong> of a category monthly limit.</li>
-                    <li><strong>Recurring Bills Processed:</strong> Daily confirmation when a scheduled bill or subscription is logged.</li>
-                    <li><strong>Goal Allocations:</strong> Confirmation when automatic savings goal deductions occur.</li>
-                    <li><strong>Family Membership:</strong> Notifications when invited members accept or leave family groups.</li>
-                    <li><strong>Mobile App Updates:</strong> Alerts when new native Android APK releases are available for direct upgrade.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 3: ACCOUNTS -->
-            <section id="accounts" class="doc-section">
-                <h2>3. Accounts Management</h2>
-                <p>Track checking accounts, credit cards, savings, ISAs, pensions, and mortgages in any global currency.</p>
-                
-                <h3>3.1 Account Classifications</h3>
-                <ul>
-                    <li><strong>Budgeting Accounts:</strong> Checking and Credit Card accounts that directly affect daily cash flow and Safe to Spend.</li>
-                    <li><strong>Non-Budgeting Accounts:</strong> Savings, Investment portfolios, Pensions, and Mortgages. These represent long-term assets or debts and do not reduce daily spendable cash.</li>
-                </ul>
-
-                <h3>3.2 Initial Balance Precision Rule</h3>
-                <div class="warning-box">
-                    <strong>⚠️ CRITICAL SETUP RULE:</strong> Set the initial balance date to the day <em>before</em> your first uploaded statement, and use the exact closing balance from that day.
-                    <ul>
-                        <li><strong>Bank / Savings:</strong> Enter positive numbers (e.g. <code>£3,500.00</code>).</li>
-                        <li><strong>Credit Cards:</strong> Enter negative numbers for owed debt (e.g. <code>-£850.00</code>).</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- SECTION 4: TRANSACTIONS & VOICE -->
+            <!-- 2. TRANSACTIONS -->
             <section id="transactions" class="doc-section">
-                <h2>4. Transactions, Voice Commands & Global Cache</h2>
-                <p>Complete ledger management with search, filters, CSV export, and voice transaction logging.</p>
-                <img src="assets/images/transaction-audit.png" alt="Transaction Audit Ledger" class="doc-image">
-                <p class="doc-image-caption">Full transaction ledger with search, category filtering, and CSV export.</p>
+                <h2>2. Transactions Feed & Smart Search</h2>
+                <p>Real-time transaction ledger grouped by monthly pay cycles with running balance audits and instant search.</p>
 
-                <h3>4.1 Adding Transactions</h3>
-                <ul>
-                    <li><strong>Expense / Income:</strong> Log standard cash-in / cash-out transactions.</li>
-                    <li><strong>Internal Transfer:</strong> Moving money between your own accounts (e.g. Checking to Savings) creates linked transactions that never distort expense totals.</li>
-                </ul>
-
-                <h3>4.2 Smart Global Cache & User Bulk Overrides</h3>
-                <p>Our intelligent categorization system recognizes millions of global merchants instantly:</p>
-                <ul>
-                    <li><strong>Global Cache:</strong> Standard merchants (e.g. "Tesco", "Uber", "Amazon") are auto-categorized with zero latency.</li>
-                    <li><strong>Bulk Overrides:</strong> When editing a transaction, check <strong>"Update all future transactions"</strong>. The system saves a personal override that permanently takes precedence over the global cache for that merchant.</li>
-                </ul>
-
-                <h3>4.3 Voice Commands (Web & Mobile)</h3>
-                <p>Tap the microphone icon to log transactions or filter your ledger with natural voice commands:</p>
-                <ul>
-                    <li><em>"Spent £14.50 on lunch at Pret"</em> → Creates an expense under Dining Out.</li>
-                    <li><em>"Show all groceries from last week"</em> → Filters ledger dynamically.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 5: AI STATEMENT UPLOAD -->
-            <section id="ai-upload" class="doc-section">
-                <h2>5. AI Statement Upload & Multi-Account Splitting</h2>
-                <p>Google Gemini Vision OCR extracts transactions from PDF or image statements with 95%+ accuracy.</p>
-                <img src="assets/images/ai-statement-upload.png" alt="AI Statement Upload Screen" class="doc-image">
-
-                <h3>5.1 Multi-Account PDF Auto-Splitting</h3>
-                <p>Many banks (such as Barclays, SBI, HDFC) combine multiple accounts (e.g. Current Account + ISA / PPF) in a single monthly PDF. Our AI automatically detects multiple account identities, splits the statement into separate processing streams, and routes each account's transactions to the appropriate ledger.</p>
-
-                <h3>5.2 Mathematical Reconciliation Check</h3>
-                <p>Every upload is verified against the bank statement's official Opening and Closing summary balances:</p>
-                <ul>
-                    <li><code>Opening Balance + Total Credits − Total Debits = Closing Balance</code></li>
-                    <li>A <strong>100% Reconciliation Badge</strong> guarantees zero missing or duplicated transactions.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 6: MAGIC DROP & GMAIL -->
-            <section id="magic-drop" class="doc-section">
-                <h2>6. Magic Drop & Gmail Automation</h2>
-                <p>Enable invisible, hands-free statement ingestion without opening the app.</p>
-                <img src="assets/images/magic-drop-settings.png" alt="Magic Drop Settings" class="doc-image">
-                <p>See our full <a href="magic-drop-guide.html">Magic Drop & Gmail Guide</a> for step-by-step setup instructions for Google Drive and Gmail time-driven triggers.</p>
-            </section>
-
-            <!-- SECTION 7: SPENDING TRENDS -->
-            <section id="spending-trends" class="doc-section">
-                <h2>7. Spending Trends (5+1 Pay Cycle Logic)</h2>
-                <p>Understand your long-term financial trajectory across multiple pay cycles.</p>
-                <img src="assets/images/advanced-reports.png" alt="Spending Trends and Analytics" class="doc-image">
-
-                <h3>7.1 The 5+1 Comparative View</h3>
-                <p>The Trends engine plots your last <strong>5 completed pay cycles</strong> alongside your <strong>active cycle</strong>. This allows you to spot whether your current pace is above or below your historical benchmark.</p>
-                <ul>
-                    <li><strong>Wealth Gap:</strong> Plots net surplus (Income − Expenses) over time.</li>
-                    <li><strong>Safety Net:</strong> Tracks cumulative emergency fund and liquid savings reserves.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 8: BUDGET LIMITS -->
-            <section id="budget-limits" class="doc-section">
-                <h2>8. Category Budget Limits</h2>
-                <p>Set spending caps per category to keep your budget under control.</p>
-                <img src="assets/images/budget-limits.png" alt="Budget Limits" class="doc-image">
-                <div class="info-box">
-                    <strong>Calendar Month Tracking:</strong> Budget limits calculate spending based on the 1st to last day of each calendar month, ensuring recurring monthly utility and grocery allowances remain consistent regardless of pay dates.
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/02_transactions.png" alt="Web Transactions" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/02_transactions.gif" alt="Mobile Transactions Flow" class="showcase-img-mobile">
+                    </div>
                 </div>
-            </section>
 
-            <!-- SECTION 9: SAVINGS GOALS -->
-            <section id="savings-goals" class="doc-section">
-                <h2>9. Savings Goals (Physical vs. Virtual)</h2>
-                <p>Set targets for holidays, emergency funds, home renovations, and major purchases.</p>
-                <img src="assets/images/savings-goals.png" alt="Savings Goals" class="doc-image">
-
-                <h3>9.1 Physical Goals vs Virtual Goals</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Physical Goal</th>
-                            <th>Virtual Goal (Envelope)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Where Money Lives</strong></td>
-                            <td>Dedicated savings / investment account</td>
-                            <td>Stays inside your checking account</td>
-                        </tr>
-                        <tr>
-                            <td><strong>How to Fund</strong></td>
-                            <td>Make bank transfer & click <strong>"Log Transfer"</strong></td>
-                            <td>Click <strong>"Quick Fund"</strong> (instant mental allocation)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Safe to Spend Effect</strong></td>
-                            <td>Deducted as an external transfer</td>
-                            <td>Deducted from available cash buffer</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>9.2 Automatic Matching Note Syntax</h3>
-                <p>When logging transfers manually, the system matches transactions to goals using the note field:</p>
+                <h3>What It Does</h3>
                 <ul>
-                    <li>Physical Goal: <code>Transfer for [Goal Name]</code> (e.g. <code>Transfer for Emergency Fund</code>)</li>
-                    <li>Virtual Goal: <code>Allocation to [Goal Name]</code> (e.g. <code>Allocation to Holiday Fund</code>)</li>
+                    <li>Live transaction feed with quick category pill filtering (Inflow, Outflow, Groceries, Dining, etc.).</li>
+                    <li>Real-time search across merchant names, descriptions, amounts, and account tags.</li>
+                    <li>Inline editing modal, bulk category re-tagging, and receipt attachments.</li>
                 </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Optimized virtualization handles thousands of historical records at 60fps. The Smart Merchant Matcher learns categorization rules and automatically cleans up noisy bank descriptions (e.g. <code>TFR FROM VANGUARD</code> → <code>Vanguard ISA</code>).</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Filter transactions using top category pills or the search box.</li>
+                    <li>Select a family member filter to isolate individual spending.</li>
+                    <li>Click/tap any row to modify category, split costs, or attach notes.</li>
+                </ol>
             </section>
 
-            <!-- SECTION 10: SMART INVESTMENTS -->
-            <section id="investments" class="doc-section">
-                <h2>10. Smart Investments & Portfolio Analytics</h2>
-                <p>Consolidate your Stocks & Shares ISAs, Pensions, and brokerage accounts.</p>
-                <img src="assets/images/smart-investments.png" alt="Smart Investments Portfolio" class="doc-image">
+            <!-- 3. ACCOUNTS -->
+            <section id="accounts" class="doc-section">
+                <h2>3. Multi-Account Hub</h2>
+                <p>Centralized view of Checking, Savings, Credit Cards, Mortgages, and Investment holdings.</p>
 
-                <h3>10.1 Key Capabilities</h3>
-                <ul>
-                    <li><strong>Statement Snapshot Truth:</strong> Upload investment valuation statements for 100% verified historical snapshots.</li>
-                    <li><strong>Asset Allocation:</strong> Visual breakdown by <strong>Geography</strong> (US, UK, Emerging Markets, Global) and <strong>Sector</strong> (Tech, Healthcare, Financials, etc.).</li>
-                    <li><strong>Pension Performance:</strong> Return calculated accurately from net contributions vs current valuation.</li>
-                    <li><strong>Live Market Pricing:</strong> Auto-updates listed holdings with 3-hour cached market prices.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 11: SMART MORTGAGES -->
-            <section id="mortgages" class="doc-section">
-                <h2>11. Smart Mortgages & Rate Solver</h2>
-                <p>Track your property equity, Loan-to-Value (LTV), and amortized payment schedules.</p>
-                <img src="assets/images/smart-mortgages.png" alt="Smart Mortgages Screen" class="doc-image">
-
-                <h3>11.1 Features & Rate Solver</h3>
-                <ul>
-                    <li><strong>Payment Linking:</strong> Automatically links mortgage debits ($\ge £100$) from your checking account. Repayments remain normal expenses without distorting Safe to Spend.</li>
-                    <li><strong>Binary Search Rate Solver:</strong> If payment amounts adjust (e.g. lender rate changes), the system reverse-engineers the exact new annual interest rate from <code>(Current Balance, Remaining Term, Monthly Payment)</code> and updates your amortization schedule.</li>
-                    <li><strong>Future Deal Comparisons:</strong> Models projected balances and compares official market deals (e.g. Barclays, HSBC) at the end of your fixed rate period.</li>
-                </ul>
-            </section>
-
-            <!-- SECTION 12: ANDROID MOBILE APP -->
-            <section id="mobile-app" class="doc-section">
-                <h2>12. Android Mobile App</h2>
-                <p>The companion app for instant on-the-go financial tracking.</p>
-                <div class="video-grid" style="grid-template-columns: 1fr 1fr;">
-                    <img src="assets/images/mobile-dashboard.png" alt="Mobile Dashboard" class="doc-image">
-                    <img src="assets/images/mobile-transactions.png" alt="Mobile Transactions" class="doc-image">
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/03_accounts.png" alt="Web Accounts" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/03_accounts.gif" alt="Mobile Accounts Flow" class="showcase-img-mobile">
+                    </div>
                 </div>
-                <p>Learn how to enable Biometrics and Bank Push Capture on our <a href="mobile-app.html">Mobile App Guide</a>.</p>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Manages liquid bank accounts alongside non-budgeting assets (Mortgages, ISAs, SIPPs).</li>
+                    <li>Displays running balances, ownership badges, and multi-currency conversions.</li>
+                    <li>Collapsible account groups for clear liquid vs non-liquid separation.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Non-budgeting accounts (such as mortgages and long-term investments) are isolated so their large balances do not distort the liquid daily Safe to Spend formula.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Click/tap <strong>+ Add Account</strong> to create a new account.</li>
+                    <li>Toggle <strong>"Include in Budgeting"</strong> depending on whether the funds represent daily spending cash.</li>
+                    <li>Assign account ownership to a specific family member or the shared household.</li>
+                </ol>
             </section>
 
-            <!-- SECTION 13: REPORTS -->
+            <!-- 4. REPORTS -->
             <section id="reports" class="doc-section">
-                <h2>13. Reports & Analytics</h2>
-                <p>Analyze income vs expenses, category breakdowns, savings rates, and transaction histories across customized date ranges with instant CSV export.</p>
-                <img src="assets/images/advanced-reports.png" alt="Reports and Analytics" class="doc-image">
+                <h2>4. Financial Reports & Analytics</h2>
+                <p>Visual cash flow analytics, category distribution charts, and burn velocity comparisons.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/04_reports.png" alt="Web Reports" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/04_reports.gif" alt="Mobile Reports Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Income vs Expense comparative cash flow analysis.</li>
+                    <li>Interactive category breakdown charts revealing where household money goes.</li>
+                    <li>Pay cycle comparisons showing month-over-month savings velocity.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Web renders responsive SVG charts while Mobile uses GPU-accelerated React Native Skia. Aggregations calculate on the fly across selected date intervals without UI lag.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Select a pay cycle or custom date interval from the top period dropdown.</li>
+                    <li>Click or tap on individual category bars to drill down into itemized historical expenses.</li>
+                </ol>
             </section>
 
-            <!-- SECTION 14: FAMILY SHARING -->
+            <!-- 5. SETTINGS -->
+            <section id="settings" class="doc-section">
+                <h2>5. Settings, Security & Biometrics</h2>
+                <p>Biometric security app lock, bank notification listener manager, and system preferences.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/05_settings.png" alt="Web Settings" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/05_settings.gif" alt="Mobile Settings Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Native fingerprint / Face ID biometric app lock.</li>
+                    <li>Android Notification Listener package whitelisting.</li>
+                    <li>Pay cycle frequency configuration, currency selector, and audit export.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Uses <code>expo-local-authentication</code> to secure the app both on launch and foreground resume. Package managers sync native versions directly from the OS.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Toggle <strong>"Biometric Lock"</strong> on mobile to require fingerprint/face scan.</li>
+                    <li>Tap <strong>"Notification Access"</strong> to grant on-device bank transaction capture permissions.</li>
+                </ol>
+            </section>
+
+            <!-- 6. MORTGAGES -->
+            <section id="mortgages" class="doc-section">
+                <h2>6. Smart Mortgage Hub & Rate Solver</h2>
+                <p>Interactive loan amortization curve, itemized payment ledger, and reverse-engineering rate solver.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/06_mortgage.png" alt="Web Mortgage" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/06_mortgage.gif" alt="Mobile Mortgage Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Interactive payoff timeline with touchable amortization points.</li>
+                    <li>Statement Activities displaying principal components, interest charges, and running balances.</li>
+                    <li>In-app live remortgage deal discovery and overpayment simulator.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>When monthly debits adjust (e.g. rate changes), a binary search algorithm reverse-engineers the exact annual interest rate from <code>(Balance, Remaining Term, Monthly Payment)</code>.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Mortgage</strong> from the side menu.</li>
+                    <li>Expand <strong>Statement Activities</strong> to inspect itemized payment rows.</li>
+                    <li>Tap along the curve to simulate payoff acceleration and interest savings.</li>
+                </ol>
+            </section>
+
+            <!-- 7. INVESTMENTS -->
+            <section id="investments" class="doc-section">
+                <h2>7. Investment Portfolio & Ticker Sync</h2>
+                <p>Multi-broker portfolio tracking across Vanguard, AJ Bell, and international platforms.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/07_investments.png" alt="Web Investments" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/07_investments.gif" alt="Mobile Investments Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li><strong>Holdings Tab:</strong> Individual funds, shares, unit costs, and current market values.</li>
+                    <li><strong>Performance Tab:</strong> Skia quarterly portfolio valuation growth curve.</li>
+                    <li><strong>Insights Tab:</strong> Asset class distribution (Equities, Bonds, Cash) and geographic exposure.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Background ticker sync fetches live prices and generates quarterly snapshot histories from statement activities and price updates.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Investments</strong> from the navigation menu.</li>
+                    <li>Switch between <strong>Holdings</strong>, <strong>Performance</strong>, and <strong>Insights</strong> tabs.</li>
+                    <li>Click/tap <strong>"Refresh Live Prices"</strong> to update valuations.</li>
+                </ol>
+            </section>
+
+            <!-- 8. GOALS -->
+            <section id="goals" class="doc-section">
+                <h2>8. Physical vs Virtual Savings Goals</h2>
+                <p>Dual-tier goal architecture distinguishing between bank-locked funds and budget envelopes.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/08_goals.png" alt="Web Goals" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/08_goals.gif" alt="Mobile Goals Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li><strong>Physical Goals:</strong> Locked directly to real savings bank account balances (Emergency Fund, House Deposit).</li>
+                    <li><strong>Virtual Goals:</strong> Category budget envelopes inside general checking accounts.</li>
+                    <li>Visual progress bars, target dates, and monthly savings calculators.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Physical goal reserves are automatically deducted from the Safe to Spend pool so emergency reserves can never be accidentally spent.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Goals</strong> from the menu.</li>
+                    <li>Click/tap <strong>+ Create Goal</strong>, choose Physical or Virtual, and set your target amount and date.</li>
+                </ol>
+            </section>
+
+            <!-- 9. BUDGET LIMITS -->
+            <section id="budget-limits" class="doc-section">
+                <h2>9. Category Budget Limits</h2>
+                <p>Category-specific spending caps and burn meters for the active pay cycle.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/09_budget_limits.png" alt="Web Budget Limits" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/09_budget_limits.gif" alt="Mobile Budget Limits Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Sets hard or soft spending limits per category (Groceries, Dining, Entertainment, Shopping).</li>
+                    <li>Progress meters with color-coded warning thresholds when approaching limits.</li>
+                </ul>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Budget Limits</strong> from the menu.</li>
+                    <li>Adjust monthly limits per category using direct amount input or sliders.</li>
+                </ol>
+            </section>
+
+            <!-- 10. RECURRING -->
+            <section id="recurring" class="doc-section">
+                <h2>10. Recurring Payments & Subscriptions</h2>
+                <p>Subscription and bill manager with predictive auto-deduction math.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/10_recurring.png" alt="Web Recurring" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/10_recurring.gif" alt="Mobile Recurring Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Tracks regular subscriptions, utilities, council tax, gym, and broadband contracts.</li>
+                    <li>Displays next billing date, monthly cadence, payment account, and active status.</li>
+                </ul>
+
+                <h3>How It Works Under the Hood</h3>
+                <p>Upcoming recurring bills within the active pay cycle are automatically reserved from Safe to Spend. When debits clear, bills are automatically marked as paid.</p>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Recurring</strong> from the navigation menu.</li>
+                    <li>Add subscriptions with their billing cadence (Monthly, Annual, Weekly).</li>
+                </ol>
+            </section>
+
+            <!-- 11. AI UPLOAD -->
+            <section id="ai-upload" class="doc-section">
+                <h2>11. AI Statement Vault (Magic Drop)</h2>
+                <p>Zero-bank-login PDF statement extraction with multimodal AI and privacy redaction.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/11_ai_upload.png" alt="Web AI Upload" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/11_ai_upload.gif" alt="Mobile AI Upload Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Drag-and-drop dropzone for Bank, Credit, Mortgage, and Investment PDF statements.</li>
+                    <li>Extraction confidence scoring (98%+) with privacy redaction badges.</li>
+                    <li>Multi-account PDF detection (splits combined statements into isolated ledgers).</li>
+                </ul>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>AI Upload</strong> from the menu.</li>
+                    <li>Drop any PDF statement or forward via Gmail Magic Drop automation.</li>
+                </ol>
+            </section>
+
+            <!-- 12. IMPORT DATA -->
+            <section id="import-data" class="doc-section">
+                <h2>12. Data Import Engine (CSV & YNAB)</h2>
+                <p>Fast migration tool for CSV spreadsheets and YNAB export archives.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/12_import_data.png" alt="Web Import Data" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/12_import_data.gif" alt="Mobile Import Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Imports historical data from YNAB register archives or standard bank CSV files.</li>
+                    <li>Visual column mapping interface with automatic duplicate detection.</li>
+                </ul>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Import CSV / YNAB</strong> from the navigation menu.</li>
+                    <li>Upload your export file, verify column mappings, and import.</li>
+                </ol>
+            </section>
+
+            <!-- 13. FAMILY -->
             <section id="family" class="doc-section">
-                <h2>14. Family Sharing & Collaboration</h2>
-                <p>Collaborate with up to 5 family members on a single plan.</p>
-                <img src="assets/images/family-settings.png" alt="Family Settings" class="doc-image">
+                <h2>13. Family Collaboration & Member Roles</h2>
+                <p>Shared household budgeting workspace supporting up to 5 family members.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/13_family_management.png" alt="Web Family" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/13_family_management.gif" alt="Mobile Family Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
                 <ul>
-                    <li><strong>Financial Transparency:</strong> All members share visibility of household accounts and goals.</li>
-                    <li><strong>Individual Filter:</strong> View personal spending vs total family cash flow with a single click.</li>
-                    <li><strong>Secure Invitations:</strong> Invite via direct email link or a 6-character join code.</li>
+                    <li>Household member administration with Owner and Member role permissions.</li>
+                    <li>Generates family invite tokens for instant partner onboarding.</li>
+                    <li>Maintains private individual views alongside shared household totals.</li>
                 </ul>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Open <strong>Family Management</strong> from the navigation menu.</li>
+                    <li>Copy and share the generated <strong>Family Invite Code</strong> with family members.</li>
+                </ol>
             </section>
 
-            <!-- SECTION 15: SECURITY & VAULT -->
-            <section id="security-vault" class="doc-section">
-                <h2>15. Security & Statement Password Vault</h2>
-                <p>Manage encrypted passwords for password-protected bank statements.</p>
+            <!-- 14. NOTIFICATIONS -->
+            <section id="notifications" class="doc-section">
+                <h2>14. In-App Notification Center</h2>
+                <p>Clean notification feed for system updates, goal alerts, and rate changes.</p>
+
+                <div class="showcase-grid">
+                    <div class="showcase-col">
+                        <div class="showcase-label">💻 React Web App</div>
+                        <img src="assets/web_media/14_notifications.png" alt="Web Notifications" class="showcase-img-web">
+                    </div>
+                    <div class="showcase-col">
+                        <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
+                        <img src="assets/mobile_media/14_notifications.gif" alt="Mobile Notifications Flow" class="showcase-img-mobile">
+                    </div>
+                </div>
+
+                <h3>What It Does</h3>
                 <ul>
-                    <li><strong>AES-256 Encryption:</strong> Statement passwords stored in the Vault are encrypted at rest using industry-standard AES-256.</li>
-                    <li><strong>In-Memory Decryption:</strong> Keys are decrypted only for the millisecond duration of PDF parsing and are never stored in plain text.</li>
-                    <li><strong>Zero Bank Credential Access:</strong> We never ask for or store your online banking credentials.</li>
+                    <li>In-app alert feed with unread badge counter on the header bell icon.</li>
+                    <li>Structured release notices, savings milestone notifications, and mortgage alerts.</li>
                 </ul>
+
+                <h3>How to Configure & Use</h3>
+                <ol>
+                    <li>Click or tap the <strong>Bell Icon (🔔)</strong> in the top-right header from any screen.</li>
+                    <li>Select <strong>"Mark All as Read"</strong> or tap individual notices to dismiss.</li>
+                </ol>
             </section>
 
-            <div class="help-box">
-                <h3>Have Questions?</h3>
-                <p>Check our <a href="faq.html">FAQ</a> or email <a href="mailto:support@getdigraw.com">support@getdigraw.com</a>.</p>
-            </div>
         </main>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer style="background: #0f172a; color: #94a3b8; padding: 2rem 0; text-align: center; border-top: 1px solid #1e293b; margin-top: 4rem;">
         <div class="container">
-            <p>&copy; 2026 Family Budget Tracker. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://family-budget.getdigraw.com/support/privacy">Privacy Policy</a>
-                <a href="https://family-budget.getdigraw.com/support/terms">Terms of Service</a>
-                <a href="mailto:support@getdigraw.com">Contact Support</a>
-            </div>
+            <p>© 2026 Family Budget Tracker. Privacy-first financial clarity for modern families.</p>
         </div>
     </footer>
 </body>
