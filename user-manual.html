@@ -281,7 +281,7 @@
             <!-- 7. INVESTMENTS -->
             <section id="investments" class="doc-section">
                 <h2>7. Investment Portfolio & Ticker Sync</h2>
-                <p>Multi-broker portfolio tracking across Vanguard, AJ Bell, and international platforms.</p>
+                <p>Multi-broker portfolio tracking across Vanguard, AJ Bell, and international investment platforms with automated market pricing.</p>
 
                 <div class="showcase-grid">
                     <div class="showcase-col">
@@ -296,19 +296,28 @@
 
                 <h3>What It Does</h3>
                 <ul>
-                    <li><strong>Holdings Tab:</strong> Individual funds, shares, unit costs, and current market values.</li>
-                    <li><strong>Performance Tab:</strong> Interactive quarterly portfolio valuation growth curve.</li>
-                    <li><strong>Insights Tab:</strong> Asset class distribution (Equities, Bonds, Cash) and geographic exposure.</li>
+                    <li><strong>Holdings Tab:</strong> Individual funds, shares, unit costs, live market prices, and current valuations.</li>
+                    <li><strong>Performance Tab:</strong> Interactive quarterly portfolio valuation growth curve and time-weighted return tracking.</li>
+                    <li><strong>Insights Tab:</strong> Asset class distribution (Equities, Bonds, Cash) and geographic market exposure.</li>
+                </ul>
+
+                <h3>Multi-Currency Multiples & Valuation Rationale</h3>
+                <p>The investment engine applies sophisticated valuation multipliers to ensure 100% precision across multi-currency and multi-denomination assets:</p>
+                <ul>
+                    <li><strong>Minor-to-Major Currency Scaling Multiples (Pence to Pounds / GBX &rarr; GBP):</strong> Many UK equities, funds, and investment trusts trade and quote on the London Stock Exchange in pence (<code>GBp</code> / <code>GBX</code>) rather than pounds. The pricing engine automatically detects pence denominations and applies a decimal scaling multiple of <code>&divide; 100</code> (<code>0.01x</code>).
+                        <br><em>Rationale:</em> Without the decimal scaling multiple, a holding of 1,000 units in a fund quoted at 450 GBp (£4.50) would naively compute to £450,000 instead of £4,500, creating an erroneous 100&times; net worth distortion.</li>
+                    <li><strong>Cross-Currency FX Multipliers:</strong> For global holdings denominated in foreign currencies (e.g. US equities in USD, European index trackers in EUR), real-time foreign exchange conversion multiples convert asset market values into your family's base currency.</li>
+                    <li><strong>Fractional Share Unit Multiples:</strong> Precise fractional unit quantities are multiplied against normalized unit quotes to calculate exact true Net Asset Value (NAV) without rounding errors.</li>
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Background ticker sync fetches live prices and generates quarterly snapshot histories from statement activities and price updates.</p>
+                <p>Automated real-time market pricing engines fetch live quotes and FX conversion rates in the background, automatically normalizing currency multiples and generating quarterly valuation snapshots from historical statement activity.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
                     <li>Open <strong>Investments</strong> from the navigation menu.</li>
                     <li>Switch between <strong>Holdings</strong>, <strong>Performance</strong>, and <strong>Insights</strong> tabs.</li>
-                    <li>Click/tap <strong>"Refresh Live Prices"</strong> to update valuations.</li>
+                    <li>Click or tap <strong>"Refresh Live Prices"</strong> to update valuations and execute real-time multi-currency normalization.</li>
                 </ol>
             </section>
 

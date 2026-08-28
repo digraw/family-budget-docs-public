@@ -41,6 +41,7 @@
                 <li><a href="#gmail-sync">3. Gmail Zero-Code Sync</a></li>
                 <li><a href="#password-vault">4. PDF Password Vault</a></li>
                 <li><a href="#security">5. The Jailed Bot Model</a></li>
+                <li><a href="#pipeline-status">6. Live Header Status & Pipeline</a></li>
             </ul>
         </aside>
 
@@ -105,6 +106,22 @@
                     <strong>🔒 Complete Isolation:</strong><br>
                     Our service bot has restricted access strictly to the single folder you explicitly share. It has zero visibility into your wider Google Drive or email inbox. You can revoke access and kill the connection instantly at any moment from your Google Drive permissions.
                 </div>
+            </section>
+
+            <section id="pipeline-status" class="doc-section">
+                <h2>6. Live Header Status Pill & Processing Pipeline</h2>
+                <p>Both the Web application and Native Mobile App feature a real-time animated Magic Drop pulse status pill in the navigation header (e.g. <code>🪄 4m ago</code> or <code>🪄 65%</code> during active ingestion).</p>
+
+                <h3>Processing Pipeline Stages:</h3>
+                <ul>
+                    <li><strong>Checking Drive:</strong> Scans your shared Google Drive folder for newly uploaded PDF or CSV statements.</li>
+                    <li><strong>Downloading:</strong> Securely downloads statement bytes to encrypted local scratch memory.</li>
+                    <li><strong>Validating & Decrypting:</strong> Verifies file structure and unlocks encrypted bank PDFs using your AES-256 password vault.</li>
+                    <li><strong>Identifying Layout:</strong> Deep learning layout engines classify bank templates, statement periods, and account numbers.</li>
+                    <li><strong>Extracting Data:</strong> Parses multi-currency transactions, investment holdings, or mortgage balance schedules.</li>
+                    <li><strong>Saving & Reconciling:</strong> Commits transactions to your household ledger, deduplicates existing items, and automatically archives processed files to the <code>Processed/</code> subfolder.</li>
+                    <li><strong>Finishing:</strong> Emits an instant push notification and updates your live Safe to Spend calculations.</li>
+                </ul>
             </section>
 
             <div class="help-box">
