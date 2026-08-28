@@ -304,7 +304,10 @@ tr:hover {
     letter-spacing: 0.05em;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .showcase-img-web {
