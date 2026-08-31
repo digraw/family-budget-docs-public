@@ -40,15 +40,16 @@
                 <li><a href="#biometrics">2. Biometric Security</a></li>
                 <li><a href="#bank-sync-transparency">3. Real-Time Bank Sync & Listener Transparency</a></li>
                 <li><a href="#sms-sync">4. Secure SMS Bank Sync & Auto-Discovery</a></li>
-                <li><a href="#interactive-charts">5. Interactive Charts</a></li>
-                <li><a href="#voice-mobile">6. Voice Commands</a></li>
-                <li><a href="#updates">7. In-App Updates</a></li>
+                <li><a href="#mobile-budget">5. Zero-Based Envelope Budgeting</a></li>
+                <li><a href="#interactive-charts">6. Interactive Charts</a></li>
+                <li><a href="#voice-mobile">7. Voice Commands</a></li>
+                <li><a href="#updates">8. In-App Updates</a></li>
             </ul>
         </aside>
 
         <main class="docs-content">
             <h1>📱 Native Android Mobile App</h1>
-            <p class="lead">The native Android companion app for Family Budget Tracker puts real-time budgeting in your pocket with biometric security, instant push notification and SMS transaction ingestion, listener transparency, and high-performance interactive charts.</p>
+            <p class="lead">The native Android companion app for Family Budget Tracker puts real-time budgeting in your pocket with biometric security, instant push notification and SMS transaction ingestion, listener transparency, zero-based envelope budgeting, and high-performance interactive charts.</p>
 
             <div class="showcase-grid" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem;">
                 <div class="showcase-col">
@@ -79,7 +80,7 @@
                 <ol>
                     <li>Log in to your account on the web at <a href="https://family-budget.getdigraw.com">family-budget.getdigraw.com</a>.</li>
                     <li>Navigate to <strong>Settings → Download Android App</strong> (or access <code>/api/v1/app/download</code>).</li>
-                    <li>Download the signed release APK (e.g. <code>family-budget-tracker-v1.0.92.apk</code>).</li>
+                    <li>Download the signed release APK (e.g. <code>family-budget-tracker-v1.0.100.apk</code>).</li>
                     <li>Tap the downloaded file to install. If prompted by Android, allow "Install from this source".</li>
                     <li>Open <strong>Family Budget</strong> and log in with your email or Google account.</li>
                 </ol>
@@ -167,8 +168,38 @@
                 </ol>
             </section>
 
+            <section id="mobile-budget" class="doc-section">
+                <h2>5. Zero-Based Envelope Budgeting on Mobile</h2>
+                <p>Experience the full power of Zero-Based Envelope Budgeting directly from your pocket with the dedicated <strong>Budget Hub</strong> screen on Android.</p>
+
+                <div class="showcase-grid" style="grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; margin: 1.5rem 0;">
+                    <div class="showcase-col">
+                        <div class="showcase-label">Mobile Budget Envelopes</div>
+                        <img src="assets/mobile_media/09_budget_limits.gif" alt="Mobile Zero-Based Envelope Budget Flow" class="showcase-img-mobile">
+                    </div>
+                    <div>
+                        <h3>✨ Native Mobile Budget Capabilities:</h3>
+                        <ul>
+                            <li><strong>Ready to Assign Hero Banner:</strong> Prominently displays your remaining unassigned cash in glowing emerald (or warns if over-allocated) with quick funding shortcuts.</li>
+                            <li><strong>1-Tap Quick Assignment:</strong> Tap on any envelope card to allocate cash, adjust targets, or view recent transaction activity.</li>
+                            <li><strong>Move Money Modal:</strong> Easily shift funds between two envelopes with zero bank transactions and zero mathematical friction.</li>
+                            <li><strong>Collapsible Envelope Groups:</strong> Smooth touch accordions organize envelopes into <em>Everyday Spending</em>, <em>Annual Bills</em>, <em>Savings Goals</em>, <em>Credit Cards</em>, and <em>Buffers</em>.</li>
+                            <li><strong>Target Progress Badges:</strong> Visual indicators show target completion status (e.g. <code>£150 / £200 funded</code>) and due date countdowns.</li>
+                            <li><strong>Multi-Member Activity Lens:</strong> Filter by <code>👤 Sarah</code>, <code>👤 John</code>, or <code>👥 All</code> to audit who spent from shared family envelopes without altering family available balances.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>How to Open Budget on Mobile:</h3>
+                <ol>
+                    <li>In the mobile app, tap the <strong>Budget</strong> tab in the navigation menu (or access via Reports).</li>
+                    <li>Assign unallocated cash until <strong>Ready to Assign is £0.00</strong>.</li>
+                    <li>Tap <strong>"Move Money"</strong> whenever you need to cover overspending between categories.</li>
+                </ol>
+            </section>
+
             <section id="interactive-charts" class="doc-section">
-                <h2>5. Interactive Charts</h2>
+                <h2>6. Interactive Charts</h2>
                 <p>High-performance interactive financial charts designed for 60fps fluid touch interactions:</p>
                 <ul>
                     <li><strong>Cash Flow Sparklines:</strong> Real-time mini sparklines in the dashboard header.</li>
@@ -179,7 +210,7 @@
             </section>
 
             <section id="voice-mobile" class="doc-section">
-                <h2>6. Hands-Free Voice Commands</h2>
+                <h2>7. Hands-Free Voice Commands</h2>
                 <p>Family Budget Tracker features a fast, deterministic voice command engine on both Web and Mobile. Tap the floating microphone button on the Transactions screen to speak natural commands.</p>
 
                 <div class="info-box" style="margin: 1rem 0;">
@@ -223,7 +254,7 @@
             </section>
 
             <section id="updates" class="doc-section">
-                <h2>7. In-App Updates</h2>
+                <h2>8. In-App Updates</h2>
                 <p>Whenever a new version of the app is released, you will receive an in-app banner and push notification with release notes and a 1-tap download link to upgrade cleanly without losing any data.</p>
             </section>
 

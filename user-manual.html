@@ -44,7 +44,7 @@
                 <li><a href="#mortgages">6. Mortgage Hub & Rate Solver</a></li>
                 <li><a href="#investments">7. Investment Portfolio</a></li>
                 <li><a href="#goals">8. Savings Goals</a></li>
-                <li><a href="#budget-limits">9. Budget Limits</a></li>
+                <li><a href="#budget-limits">9. Zero-Based Envelope Budget</a></li>
                 <li><a href="#recurring">10. Recurring Subscriptions</a></li>
                 <li><a href="#ai-upload">11. AI Statement Vault</a></li>
                 <li><a href="#import-data">12. Data Import (CSV & YNAB)</a></li>
@@ -354,33 +354,89 @@
                 </ol>
             </section>
 
-            <!-- 9. BUDGET LIMITS -->
+            <!-- 9. BUDGET & ZERO-BASED ENVELOPES -->
             <section id="budget-limits" class="doc-section">
-                <h2>9. Category Budget Limits</h2>
-                <p>Category-specific spending caps and burn meters for the active pay cycle.</p>
+                <h2>9. Zero-Based Envelope Budgeting & Spending Ceilings</h2>
+                <p class="lead">Transform your household finances from passive tracking to proactive cash allocation. Give every available pound a specific job before it is spent with cash-backed envelopes, automated credit card reservations, and multi-cycle target scheduling.</p>
 
                 <div class="showcase-grid">
                     <div class="showcase-col">
-                        <div class="showcase-label">💻 React Web App</div>
-                        <img src="assets/web_media/09_budget_limits.png" alt="Web Budget Limits" class="showcase-img-web">
+                        <div class="showcase-label">💻 React Web App (Budget Hub)</div>
+                        <img src="assets/web_media/09_budget_limits.png" alt="Web Zero-Based Budget & Envelopes" class="showcase-img-web">
                     </div>
                     <div class="showcase-col">
                         <div class="showcase-label">📱 Native Mobile (Live Flow)</div>
-                        <img src="assets/mobile_media/09_budget_limits.gif" alt="Mobile Budget Limits Flow" class="showcase-img-mobile">
+                        <img src="assets/mobile_media/09_budget_limits.gif" alt="Mobile Budget Limits & Envelopes Flow" class="showcase-img-mobile">
                     </div>
                 </div>
 
-                <h3>What It Does</h3>
+                <h3>1. 🧭 The Product Model: "Track Only" vs "Envelope Budgeting"</h3>
+                <p>Family Budget Tracker supports two distinct budgeting workflows, allowing you to choose the exact level of financial structure you need:</p>
                 <ul>
-                    <li>Sets hard or soft spending limits per category (Groceries, Dining, Entertainment, Shopping).</li>
-                    <li>Progress meters with color-coded warning thresholds when approaching limits.</li>
+                    <li><strong>Track Only Mode (Default):</strong> Pure transaction and cash-flow tracking. You monitor your central <em>Safe to Spend</em> gauge, track recurring bills, and set lightweight <em>Category Budget Limits</em> as spending ceilings without having to assign every pound.</li>
+                    <li><strong>Zero-Based Envelope Planning (Active):</strong> A complete cash-backed envelope accounting system. Every pound currently in your checking and liquid cash accounts is explicitly assigned to an envelope until <strong>Ready to Assign is exactly £0.00</strong>.</li>
                 </ul>
 
-                <h3>How to Configure & Use</h3>
+                <div class="info-box" style="margin: 1.5rem 0;">
+                    <strong>📐 The Core Zero-Based Accounting Invariant:</strong><br>
+                    <code>Confirmed Budgeting Cash = Ready to Assign + ∑ (All Envelope Available Balances)</code><br><br>
+                    <code>Envelope Available = Carry-in + Assigned + Transaction Activity + Moved In − Moved Out</code>
+                    <br><br>
+                    <em>Note:</em> "Zero-Based" does <strong>not</strong> mean your bank account balance is zero or that you should spend all your money. It means <strong>zero money remains unassigned</strong> without a designated purpose.
+                </div>
+
+                <h3>2. 📂 The 5 Envelope Group Types</h3>
+                <p>Envelopes are organized into 5 purpose-built functional groups:</p>
+                <ul>
+                    <li><strong>💳 Everyday Spending:</strong> Variable day-to-day lifestyle categories (Groceries, Dining Out, Fuel, Entertainment, Shopping). Categorized transactions create real-time debit activity.</li>
+                    <li><strong>🗓️ Annual & Upcoming Bills:</strong> Scheduled or irregular lump-sum commitments (Car Insurance, Road Tax, MOT, Boiler Service, School Fees, Christmas, Holiday Season). Multi-cycle targets break massive annual bills into manageable pay-cycle assignments.</li>
+                    <li><strong>🎯 Savings Goals:</strong> Long-term cash reservations (Emergency Fund, House Deposit, Wedding, Future Purchases). Money remains safely protected in your budgeting accounts or physical savings accounts.</li>
+                    <li><strong>💳 Credit Card Payment Envelopes:</strong> System-managed envelopes that automatically reserve checking cash to pay off credit card balances as purchases occur.</li>
+                    <li><strong>🛡️ Buffers:</strong> Dedicated safety reserves (Emergency Buffer, Next Cycle Pay Buffer) ensuring you never accidentally dip into next month's funds.</li>
+                </ul>
+
+                <h3>3. 🎯 5 Intelligent Target Scheduling Types</h3>
+                <p>Targets provide smart funding suggestions each pay cycle without creating fake transactions or locking money involuntarily:</p>
+                <ul>
+                    <li><strong>1. Set aside per cycle:</strong> Suggests assigning a fixed, recurring amount every pay cycle (e.g. <em>£150 every cycle for Groceries</em>).</li>
+                    <li><strong>2. Refill to amount:</strong> Smart top-up target that only requests enough money to restore the envelope back to a target ceiling (e.g. <em>Refill Dining Out to £200</em>—if £70 remained from last cycle, it only asks for £130).</li>
+                    <li><strong>3. Have amount by date:</strong> Calculates the exact amount required across remaining pay cycles before a target deadline:
+                        <br><code>Required per Cycle = max(0, Target Amount − Available Amount) ÷ Remaining Pay Cycles</code>
+                        <br><em>Example:</em> £1,200 Car Insurance due in 6 cycles suggests exactly £200 per cycle.</li>
+                    <li><strong>4. Recurring due date:</strong> Automatically rolls forward to the next annual or monthly period once funded or spent (e.g. Annual MOT every August).</li>
+                    <li><strong>5. No target:</strong> Flexible manual envelope funded on an ad-hoc basis.</li>
+                </ul>
+
+                <h3>4. 💳 Credit Card Automatic Cash Reservation Engine</h3>
+                <p>Family Budget Tracker solves credit card debt by keeping credit purchases 100% cash-backed in real time:</p>
                 <ol>
-                    <li>Open <strong>Budget Limits</strong> from the menu.</li>
-                    <li>Adjust monthly limits per category using direct amount input or sliders.</li>
+                    <li><strong>Funded Card Purchase:</strong> When you buy £60 of Groceries with your credit card, £60 is deducted from your <em>Groceries</em> envelope and <strong>automatically moved to your Credit Card Payment envelope</strong>.</li>
+                    <li><strong>Cash Integrity:</strong> Your checking account cash remains untouched until you actually pay the credit card bill.</li>
+                    <li><strong>Paying the Card:</strong> Making a credit card payment is recorded as an internal transfer from checking to your credit card account. This simultaneously reduces your Card Payment envelope availability and credit card liability—<strong>without recording a second duplicate expense</strong>.</li>
+                    <li><strong>Unfunded Overspending Warning:</strong> If you spend on a credit card in a category with insufficient funds, the envelope turns red and flags unfunded debt, prompting you to reassign cash to cover the balance.</li>
                 </ol>
+
+                <h3>5. 🔄 Overspending, Rollover & Negative Balances</h3>
+                <ul>
+                    <li><strong>Positive Balances:</strong> Any unspent funds in an envelope automatically roll over into the next pay cycle as positive carry-in available funds.</li>
+                    <li><strong>Cash Overspending:</strong> If you overspend an envelope from a checking account, the negative balance directly reduces your <em>Ready to Assign</em> pool in the subsequent cycle, ensuring your budget remains mathematically sound.</li>
+                    <li><strong>Quick Money Movement:</strong> Tap <strong>"Move Money"</strong> on any envelope to shift available funds between categories with 1 tap and 0 bank friction.</li>
+                </ul>
+
+                <h3>6. 👨‍👩‍👧‍👦 Shared Family Envelopes & Many-to-One Category Mappings</h3>
+                <p>For households utilizing <strong>Premium Family</strong> sharing, the envelope budgeting engine provides unified clarity without administrative headache:</p>
+                <ul>
+                    <li><strong>One Shared Family Scope per Currency:</strong> The entire household shares a single unified <em>Ready to Assign</em> and envelope availability pool per currency.</li>
+                    <li><strong>Many-to-One Category Mappings:</strong> Multiple family members' personal categories (e.g. <em>Sarah's Groceries</em> and <em>John's Groceries</em>) seamlessly map into a single shared household <strong>Groceries</strong> envelope. Transactions preserve individual user ownership while ledger activity reconciles to the family envelope.</li>
+                    <li><strong>Family Member Lens:</strong> Switch between <code>👥 All Members</code>, <code>👤 Sarah</code>, or <code>👤 John</code> to inspect individual spending breakdowns while keeping total available envelope reserves synchronized.</li>
+                    <li><strong>Role-Based Allocation Permissions:</strong> Family owners and admins can manage envelopes and assign money, while family members can view and track their allocations.</li>
+                </ul>
+
+                <h3>7. ⚡ Controlled 1-Click Migration & Reversible Switching</h3>
+                <ul>
+                    <li><strong>1-Click Migration Preview:</strong> If you have existing Category Budget Limits and Savings Goals, the app generates a deterministic migration preview that converts limits into envelope targets and reserves without writing a single permanent row until you confirm.</li>
+                    <li><strong>Reversible Pause & Resume:</strong> You can pause Envelope Budgeting at any time to return to lightweight <em>Track Only</em> mode. Pausing preserves all allocations, targets, and history intact, allowing you to resume whenever you are ready.</li>
+                </ul>
             </section>
 
             <!-- 10. RECURRING -->
