@@ -75,7 +75,7 @@
 
                 <h3>What It Does</h3>
                 <ul>
-                    <li>Displays the central <strong>Safe to Spend (S2S)</strong> gauge showing exactly how much discretionary money you can spend before your next salary.</li>
+                    <li>Displays the central <strong>Safe to Spend (S2S)</strong> gauge using the current account, bill, budget, and goal data for the selected pay cycle.</li>
                     <li>Quick-stat overview cards: Liquid Cash Balance, Inflow Income, Expense Burn, and Allocated Savings.</li>
                     <li>Instant family filter chip (<code>👥 All</code>, <code>👤 Sarah</code>, <code>👤 John</code>) to toggle between household and individual views without layout shifts.</li>
                 </ul>
@@ -119,7 +119,7 @@
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Optimized virtualization handles thousands of historical records at 60fps. The Smart Merchant Matcher learns categorization rules and automatically cleans up noisy bank descriptions (e.g. <code>TFR FROM VANGUARD</code> → <code>Vanguard ISA</code>).</p>
+                <p>List virtualization keeps long transaction histories responsive. The Smart Merchant Matcher reuses learned categorisation rules for supported merchant descriptions.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
@@ -228,13 +228,13 @@
                 <h3>What It Does</h3>
                 <ul>
                     <li>Native fingerprint / Face ID biometric app lock enforced on launch and resume.</li>
-                    <li><strong>Real-Time Bank Sync:</strong> Instant transaction ingestion from bank push notifications and Google Wallet.</li>
-                    <li><strong>Listener Transparency:</strong> Zero-server-logging privacy architecture with on-device allowlisting and live audit trail.</li>
+                    <li><strong>Bank notification capture:</strong> Optional processing of eligible alerts from bank and Wallet packages selected in Settings.</li>
+                    <li><strong>Listener Transparency:</strong> Package allowlisting, capture status, local review controls, and privacy-safe diagnostics.</li>
                     <li>Pay cycle frequency configuration, currency selector, and audit export.</li>
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Uses <code>expo-local-authentication</code> for biometrics and a native Android <code>NotificationListenerService</code>. Notification text is parsed 100% in local memory and never transmitted to server logs or remote databases.</p>
+                <p>Uses <code>expo-local-authentication</code> for biometrics and a native Android <code>NotificationListenerService</code>. Alerts without a currency-qualified amount stay on the device. Eligible alert details are sent securely to Family Budget Tracker and may be processed once by Google Gemini. Only confirmed posted transactions create ledger rows.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
@@ -268,7 +268,7 @@
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>When monthly debits adjust (e.g. rate changes), a binary search algorithm reverse-engineers the exact annual interest rate from <code>(Balance, Remaining Term, Monthly Payment)</code>.</p>
+                <p>Eligible repayments from budgeting accounts remain ordinary expenses and can also create provisional mortgage activity. When a matching payment changes, the amortisation engine can infer an annual rate from <code>(Balance, Remaining Term, Monthly Payment)</code>. Uploaded mortgage statements remain authoritative, and extracted facts are presented for review before application.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
@@ -302,22 +302,22 @@
                 </ul>
 
                 <h3>Multi-Currency Multiples & Valuation Rationale</h3>
-                <p>The investment engine applies sophisticated valuation multipliers to ensure 100% precision across multi-currency and multi-denomination assets:</p>
+                <p>The investment engine normalizes supported quote denominations and currencies before calculating current values:</p>
                 <ul>
                     <li><strong>Minor-to-Major Currency Scaling Multiples (Pence to Pounds / GBX &rarr; GBP):</strong> Many UK equities, funds, and investment trusts trade and quote on the London Stock Exchange in pence (<code>GBp</code> / <code>GBX</code>) rather than pounds. The pricing engine automatically detects pence denominations and applies a decimal scaling multiple of <code>&divide; 100</code> (<code>0.01x</code>).
                         <br><em>Rationale:</em> Without the decimal scaling multiple, a holding of 1,000 units in a fund quoted at 450 GBp (£4.50) would naively compute to £450,000 instead of £4,500, creating an erroneous 100&times; net worth distortion.</li>
                     <li><strong>Cross-Currency FX Multipliers:</strong> For global holdings denominated in foreign currencies (e.g. US equities in USD, European index trackers in EUR), real-time foreign exchange conversion multiples convert asset market values into your family's base currency.</li>
-                    <li><strong>Fractional Share Unit Multiples:</strong> Precise fractional unit quantities are multiplied against normalized unit quotes to calculate exact true Net Asset Value (NAV) without rounding errors.</li>
+                    <li><strong>Fractional units:</strong> Fractional quantities are multiplied by normalized quotes and rounded for display in the portfolio currency.</li>
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Automated real-time market pricing engines fetch live quotes and FX conversion rates in the background, automatically normalizing currency multiples and generating quarterly valuation snapshots from historical statement activity.</p>
+                <p>A user-triggered refresh obtains available public market quotes and FX rates, with a three-hour cache. Unsupported, private, or ambiguous holdings keep their latest verified statement value. Statements remain the reconciliation source of truth.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
                     <li>Open <strong>Investments</strong> from the navigation menu.</li>
                     <li>Switch between <strong>Holdings</strong>, <strong>Performance</strong>, and <strong>Insights</strong> tabs.</li>
-                    <li>Click or tap <strong>"Refresh Live Prices"</strong> to update valuations and execute real-time multi-currency normalization.</li>
+                    <li>Click or tap <strong>"Refresh Prices"</strong> to request available market quotes and currency conversion.</li>
                 </ol>
             </section>
 
@@ -345,7 +345,7 @@
                 </ul>
 
                 <h3>How It Works Under the Hood</h3>
-                <p>Physical goal reserves are automatically deducted from the Safe to Spend pool so emergency reserves can never be accidentally spent.</p>
+                <p>Physical goals are linked to dedicated account balances. Virtual goals reserve money within the budgeting workflow. Review the selected source and target accounts before recording a contribution.</p>
 
                 <h3>How to Configure & Use</h3>
                 <ol>
@@ -428,8 +428,8 @@
                 <ul>
                     <li><strong>One Shared Family Scope per Currency:</strong> The entire household shares a single unified <em>Ready to Assign</em> and envelope availability pool per currency.</li>
                     <li><strong>Many-to-One Category Mappings:</strong> Multiple family members' personal categories (e.g. <em>Sarah's Groceries</em> and <em>John's Groceries</em>) seamlessly map into a single shared household <strong>Groceries</strong> envelope. Transactions preserve individual user ownership while ledger activity reconciles to the family envelope.</li>
-                    <li><strong>Family Member Lens:</strong> Switch between <code>👥 All Members</code>, <code>👤 Sarah</code>, or <code>👤 John</code> to inspect individual spending breakdowns while keeping total available envelope reserves synchronized.</li>
-                    <li><strong>Role-Based Allocation Permissions:</strong> Family owners and admins can manage envelopes and assign money, while family members can view and track their allocations.</li>
+                    <li><strong>Family Member Lens:</strong> Switch between <code>👥 All Members</code> or an individual member to inspect activity. The filter does not change Ready to Assign, Assigned, Available, targets, suggestions, or cycle balances.</li>
+                    <li><strong>Role-Based Allocation Permissions:</strong> Owners and admins manage setup, migration, envelopes, targets, and lifecycle. Members may assign, unassign, and move money. Viewers are read-only.</li>
                 </ul>
 
                 <h3>7. ⚡ Controlled 1-Click Migration & Reversible Switching</h3>
@@ -490,7 +490,7 @@
                 <h3>What It Does</h3>
                 <ul>
                     <li>Drag-and-drop dropzone for Bank, Credit, Mortgage, and Investment PDF statements.</li>
-                    <li>Extraction confidence scoring (98%+) with privacy redaction badges.</li>
+                    <li>Extraction confidence indicators and review controls before ledger confirmation.</li>
                     <li>Multi-account PDF detection (splits combined statements into isolated ledgers).</li>
                 </ul>
 
@@ -550,7 +550,7 @@
                 <ul>
                     <li>Household member administration with Owner and Member role permissions.</li>
                     <li>Generates family invite tokens for instant partner onboarding.</li>
-                    <li>Maintains private individual views alongside shared household totals.</li>
+                    <li>Provides individual activity filters alongside authoritative shared household totals.</li>
                 </ul>
 
                 <h3>How to Configure & Use</h3>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Magic Drop and Gmail Automation Guide - Zero-code automated bank statement sync for Family Budget Tracker">
+        content="Magic Drop and Gmail setup guide for supported Family Budget Tracker statement ingestion.">
     <title>Magic Drop & Gmail Guide - Family Budget Tracker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/docs.css">
@@ -47,7 +47,7 @@
 
         <main class="docs-content">
             <h1>✨ Magic Drop & Gmail Automation Guide</h1>
-            <p class="lead">Set up seamless, zero-effort bank statement ingestion. Simply drop PDF statements into Google Drive or forward bank emails to automatically parse, categorize, and commit transactions to your ledger.</p>
+            <p class="lead">Set up assisted statement ingestion through a Google Drive folder or Gmail filter. Supported files are processed and reconciled, with review required when extraction or balances are uncertain.</p>
             <img src="assets/images/magic-drop-settings.png" alt="Magic Drop Settings" class="doc-image">
 
             <section id="overview" class="doc-section">
@@ -55,8 +55,8 @@
                 <p>Magic Drop is an automated background ingestion engine that monitors your designated cloud storage:</p>
                 <ul>
                     <li>Every 60 seconds, the background worker scans your shared folder for new PDF or image statements.</li>
-                    <li>Files are auto-decrypted using passwords from your secure Vault, parsed via Google Gemini Vision AI, mathematically reconciled, and recorded into your ledger.</li>
-                    <li>Once processed, the file is archived in a <code>Processed/</code> subfolder in your Drive so you have a complete permanent personal audit record.</li>
+                    <li>Supported files can be decrypted with a password from your vault, processed with Google Gemini, and checked against statement balances.</li>
+                    <li>Successfully handled files can be moved to a <code>Processed/</code> subfolder according to the configured post-processing action.</li>
                 </ul>
             </section>
 
@@ -80,7 +80,7 @@
                 </ul>
 
                 <h3>Step 2: Set Up Gmail Ingestion Apps Script</h3>
-                <p>Using Google Apps Script inside your own Google account guarantees your email credentials and data never leave your Google cloud perimeter:</p>
+                <p>The provided Google Apps Script runs in your Google account and copies attachments selected by your Gmail filters into the Drive folder you chose to share. Family Budget Tracker does not receive your Gmail password.</p>
                 <ol>
                     <li>Visit <a href="https://script.google.com">script.google.com</a> and click <strong>"New Project"</strong>.</li>
                     <li>Paste the standard Magic Drop ingestion script (available under <strong>Settings → Magic Drop → Gmail Setup</strong> in the app).</li>
@@ -96,15 +96,15 @@
                 <ol>
                     <li>Navigate to <strong>Settings → Statement Passwords (Vault)</strong>.</li>
                     <li>Add the password associated with your bank's statement format.</li>
-                    <li>The key is encrypted in our database using <strong>AES-256</strong> and only unlocked in-memory for the millisecond required to open the PDF during ingestion.</li>
+                    <li>The password is encrypted at rest and decrypted only when the worker needs to open a matching statement.</li>
                 </ol>
             </section>
 
             <section id="security" class="doc-section">
-                <h2>5. The "Jailed Bot" Security Guarantee</h2>
+                <h2>5. Folder-Level Service Account Access</h2>
                 <div class="success-box">
-                    <strong>🔒 Complete Isolation:</strong><br>
-                    Our service bot has restricted access strictly to the single folder you explicitly share. It has zero visibility into your wider Google Drive or email inbox. You can revoke access and kill the connection instantly at any moment from your Google Drive permissions.
+                    <strong>Folder-level access:</strong><br>
+                    The service account can access the specific Drive folder you share with it. It does not receive your Google account credentials or general Gmail inbox access. You can revoke folder access in Google Drive permissions.
                 </div>
             </section>
 
@@ -115,12 +115,12 @@
                 <h3>Processing Pipeline Stages:</h3>
                 <ul>
                     <li><strong>Checking Drive:</strong> Scans your shared Google Drive folder for newly uploaded PDF or CSV statements.</li>
-                    <li><strong>Downloading:</strong> Securely downloads statement bytes to encrypted local scratch memory.</li>
+                    <li><strong>Downloading:</strong> Retrieves the selected statement into temporary processing storage.</li>
                     <li><strong>Validating & Decrypting:</strong> Verifies file structure and unlocks encrypted bank PDFs using your AES-256 password vault.</li>
-                    <li><strong>Identifying Layout:</strong> Deep learning layout engines classify bank templates, statement periods, and account numbers.</li>
+                    <li><strong>Identifying Layout:</strong> The extraction service identifies statement periods, account sections, and supported layouts.</li>
                     <li><strong>Extracting Data:</strong> Parses multi-currency transactions, investment holdings, or mortgage balance schedules.</li>
-                    <li><strong>Saving & Reconciling:</strong> Commits transactions to your household ledger, deduplicates existing items, and automatically archives processed files to the <code>Processed/</code> subfolder.</li>
-                    <li><strong>Finishing:</strong> Emits an instant push notification and updates your live Safe to Spend calculations.</li>
+                    <li><strong>Saving and reconciling:</strong> Saves confirmed genuine rows, checks duplicates, and validates closing figures. A mismatch is routed to review without creating a balancing transaction.</li>
+                    <li><strong>Finishing:</strong> Updates application status and the affected financial views after processing completes.</li>
                 </ul>
             </section>
 
